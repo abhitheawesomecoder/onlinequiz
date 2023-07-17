@@ -208,9 +208,9 @@
         <section class="slider-section">
             <div class="slider-wrapper">
                 <div id="main-slider" class="nivoSlider">
-                    <img src="{{ asset('frontend/img/B1.jpg')}}" alt="" title="#slider-caption-1"/>
-                    <img src="{{ asset('frontend/img/slider-2.jpg')}}" alt="" title="#slider-caption-2"/>
-                    <img src="{{ asset('frontend/img/slider-3.jpg')}}" alt="" title="#slider-caption-3"/>
+                    <img src="{{ asset('frontend/icon/B1.jpg')}}" alt="" title="#slider-caption-1"/>
+                    <img src="{{ asset('frontend/icon/B2.jpg')}}" alt="" title="#slider-caption-2"/>
+                    <img src="{{ asset('frontend/icon/B3.jpg')}}" alt="" title="#slider-caption-3"/>
                     
                 </div><!-- /#main-slider -->
 
