@@ -4,6 +4,7 @@ use App\User;
 use App\Topic;
 use App\Answer;
 use App\copyrighttext;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
 use App\Page;
@@ -22,8 +23,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> 'coming_soon'], function(){
 
-  Route::redirect('/', 'home');
   Auth::routes();
+
+  Route::get('/', function () {
+    return view('index');
+});
 
   /*facebook login route*/
   // Route::get('login/o_auth/facebook  ', 'Auth\LoginController@redirectToProvider');
