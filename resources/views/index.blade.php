@@ -79,7 +79,7 @@
             }
            
            
-            @media (max-width: 350px) {
+            @media (max-width: 600px) {
                 .text_size {
                     font-size: 25px;
             }
@@ -143,6 +143,10 @@
             .width_set_mob {
                 max-width: 100%;
             }
+            .mobile_logo {
+                width: 70px;
+                height: 70px;
+            }
             }
         </style>
     </head>
@@ -183,7 +187,7 @@
                         <div class="col-sm-4">
                             <div class="site-branding">
                                 <a href="#">
-                                    <img src="{{ asset('frontend/icon/logo_new.png')}}" width="100px" height="100px" alt="Brand"></a>
+                                    <img src="{{ asset('frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
                             </div>
                         </div>
                        <div class="col-sm-8 text-right">
@@ -498,6 +502,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 xs-padding">
+                       
+                    </div>
+                    <div class="col-md-6 xs-padding">
                         <div class="campaigns-wrap">
                             <!-- <h4>Featured Campaigns</h4> -->
                             <h2>Dr APJ. Abdul Kalam Talent Search Examination 2023.</h2>
@@ -512,14 +519,14 @@
                             <a href="#" class="default-btn">Donate Now</a>
                         </div>
                     </div>
-                    <div class="col-md-6 xs-padding">
+                    <!-- <div class="col-md-6 xs-padding">
                         <div class="video-wrap">
                             <img src="img/video.jpg" alt="video">
                             <div class="play">
                                 <a class="img-popup" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=_IlLwfC2dNc"><i class="ti-control-play"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section><!-- /Featured Campaigns Section -->
