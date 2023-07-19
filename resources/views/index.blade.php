@@ -212,9 +212,9 @@
         <section class="slider-section">
             <div class="slider-wrapper">
                 <div id="main-slider" class="nivoSlider">
-                    <img src="{{ asset('frontend/icon/B1.jpg')}}" alt="" title="#slider-caption-1"/>
-                    <img src="{{ asset('frontend/icon/B2.jpg')}}" alt="" title="#slider-caption-2"/>
-                    <img src="{{ asset('frontend/icon/B3.jpg')}}" alt="" title="#slider-caption-3"/>
+                    <img src="{{ asset('frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-1"/>
+                    <img src="{{ asset('frontend/icon/second_banner.jpg')}}" alt="" title="#slider-caption-2"/>
+                    <img src="{{ asset('frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-3"/>
                     
                 </div><!-- /#main-slider -->
 
