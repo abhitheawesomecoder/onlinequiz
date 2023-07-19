@@ -78,6 +78,75 @@
                 margin-bottom: 100px;
             }
            
+         @media (min-width: 601px) and (max-width: 900px) {
+                .text_size {
+                    font-size: 25px;
+            }
+            .sub_heading {
+                font-size: 13px;
+            }
+            .text {
+                font-size: 11px;
+            }
+            .mobile {
+                flex-flow: column;
+            }
+            .headings h2.education {
+                float: left;
+                text-decoration: underline;
+                font-size: 34px;
+                color: #f0c774;
+            }
+            .col-mob {
+                max-width: 100%;
+            }
+            .mob-view {
+                margin-left: 15px;
+            }
+            .headings h2.education_mob {
+                float: left;
+                text-decoration: underline;
+                font-size: 24px;
+                color: #f0c774;
+            }
+
+            .headings h2.livehhod_mob {
+                float: left;
+                text-decoration: underline;
+                font-size: 24px;
+                color: #debfae;
+            }
+            .headings h2.healthcare_mob {
+                float: left;
+                text-decoration: underline;
+                font-size: 24px;
+                color: #c0adcc;
+            }
+            .headings h2.woomen_mob {
+                float: left;
+                text-decoration: underline;
+                font-size: 24px;
+                text-align: left;
+                color: #b3d2d1;
+            }
+            .margin {
+                margin-bottom: 30px;
+            }
+            .mob_vision {
+                flex-flow: column-reverse;
+            }
+            .mob_vision_img {
+                width: 336px;
+                    height: 230px;
+            }
+            .width_set_mob {
+                max-width: 100%;
+            }
+            .mobile_logo {
+                width: 70px;
+                height: 70px;
+            }
+                        }
            
             @media (max-width: 600px) {
                 .text_size {
