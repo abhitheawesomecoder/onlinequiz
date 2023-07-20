@@ -262,14 +262,14 @@
                        <div class="col-sm-8 text-right">
                            <ul id="mainmenu" class="nav navbar-nav nav-menu">
                                
-                                <li><a href="about.html">About Us</a></li>
+                                <li><a  href="#about-us">About Us</a></li>
                                 <!-- <li><a href="causes.html">Our Impact</a></li> -->
-                                <li><a href="event.html">Our Mission</a></li>
-                                <li><a href="#">Our Volunteer</a></li>
-                                <li><a href="blog-grid.html">What people say</a></li>
+                                <li><a href="#our-vission">Our Vission</a></li>
+                                <li><a href="#our-volunteer">Our Volunteer</a></li>
+                                <li><a href="#what-people-say">What people say</a></li>
                                 <li> <a href="contact.html">Contact Us</a></li>
                             </ul>
-                            <a href="#" class="default-btn">Donet Now</a>
+                            <a href="#" class="default-btn">JOIN US</a>
                        </div>
                     </div>
                 </div>
@@ -368,7 +368,7 @@
         </section> -->
         <!-- /Promo Section -->
         
-        <section class="causes-section bg-grey bd-bottom padding">
+        <section id="about-us" class="causes-section bg-grey bd-bottom padding">
             <div class="container">
                 <div class="section-heading text-center mb-40">
                     <h2>About Us</h2>
@@ -533,11 +533,11 @@
             </div>
         </section>
         <!-- our vission -->
-        <section class="causes-section bg-grey bd-bottom padding" style="background-color: white;">
+        <section id="our-vission" class="causes-section bg-grey bd-bottom padding" style="background-color: white;">
             <div class="container">
                 <div class="row mob_vision">
-                    <div class="col-6 width_set_mob">
-                    <h2 style="text-align: center;color: #AA2672;">OUR VISION</h2>
+                    <div class="col-6 section-heading width_set_mob">
+                    <h2 style="text-align: center;">OUR VISION</h2>
                     <br>
                     <br>
                     <p> Keeping in mind the great word said by legend dr. 
@@ -584,8 +584,7 @@
                             <!-- <div class="donation-box">
                                 <h3><i class="ti-bar-chart"></i>Goal: $450000</h3>
                                 <h3><i class="ti-thumb-up"></i>Raised: $55000</h3>
-                            </div> -->
-                            <a href="#" class="default-btn">Donate Now</a>
+                            </div> -->JOIN US</a>
                         </div>
                     </div>
                     <!-- <div class="col-md-6 xs-padding">
@@ -600,7 +599,7 @@
             </div>
         </section><!-- /Featured Campaigns Section -->
         
-        <section class="team-section bg-grey bd-bottom circle shape padding">
+        <section id="our-volunteer" class="team-section bg-grey bd-bottom circle shape padding">
             <div class="container">
                 <div class="section-heading text-center mb-40">
                     <h2>Meet Out Volunteers</h2>
@@ -759,7 +758,7 @@
         </section> -->
         <!-- Events Section -->
         
-        <section class="testimonial-section bd-bottom padding">
+        <section id="what-people-say" class="testimonial-section bd-bottom padding">
             <div class="container">
                 <div class="section-heading text-center mb-40">
                     <h2>What People Say</h2>
@@ -850,7 +849,7 @@
         </section> -->
         <!-- Blog Section -->
         
-        <div class="sponsor-section bd-bottom">
+        <!-- <div class="sponsor-section bd-bottom">
             <div class="container">
                 <ul id="sponsor-carousel" class="sponsor-items owl-carousel">
                     <li class="sponsor-item">
@@ -879,7 +878,8 @@
                     </li>
                 </ul>
             </div>
-        </div><!-- ./Sponsor Section -->
+        </div> -->
+        <!-- ./Sponsor Section -->
         
         <section class="widget-section padding">
             <div class="container">
@@ -899,7 +899,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 xs-padding">
-                        <div class="widget-content">
+                        <!-- <div class="widget-content">
                             <h3>Recent Campaigns</h3>
                             <ul class="widget-link">
                                 <li><a href="#">First charity activity of this summer. <span>-1 Year Ago</span></a></li>
@@ -907,7 +907,7 @@
                                 <li><a href="#">Clean-water system for rural poor. <span>-2 Year Ago</span></a></li>
                                 <li><a href="#">Nepal earthqueak donation campaigns. <span>-3 Year Ago</span></a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-md-4 xs-padding">
                         <div class="widget-content">
@@ -980,3 +980,27 @@
 
     </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuLinks = document.querySelectorAll("#mainmenu li a");
+
+        menuLinks.forEach(function (link) {
+            link.addEventListener("click", smoothScroll);
+        });
+
+        function smoothScroll(event) {
+            event.preventDefault();
+            const targetId = event.target.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            const offsetTop = targetElement.getBoundingClientRect().top;
+            const headerOffset = 50;
+
+            window.scrollBy({
+                top: offsetTop - headerOffset,
+                behavior: "smooth"
+            });
+        }
+    });
+</script>
