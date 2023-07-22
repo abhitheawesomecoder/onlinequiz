@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Mail;
 use App\Setting;
 use App\Mail\WelcomeUser;
+use App\StudentClass;
 
 class RegisterController extends Controller
 {
@@ -76,14 +77,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
         $setting = Setting::find(1);
+
+        
+
+        $studen_class = new StudentClass();
+        $studen_class->class_name_id = $data['class_name_id'];
+        $studen_class->student_name = $data['student_name'];
+        $studen_class->school_name = $data['school_name'];
+        $studen_class->mobile_num = $data['mobile_num'];
+        $studen_class->adhaar_card_num = $data['adhaar_card_num'];
+        $studen_class->student_email = $data['student_email'];
+        $studen_class->class_teacher = $data['class_teacher'];
+        $studen_class->division = $data['division'];
+        $studen_class->fav_subject = $data['fav_subject'];
+        $studen_class->schooler_ship = $data['schooler_ship'];
+        $studen_class->save();
 
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'role' => 'S',
+            'class_name_id'=> $data['class_name_id'],
         ]);
+
 
         if($setting->wel_mail == 1){
             Mail::to($data['email'])->send(new WelcomeUser($user));
