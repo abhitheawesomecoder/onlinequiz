@@ -106,11 +106,15 @@
           <small class="text-danger">{{ $errors->first('name') }}</small>
         </div>
 
-        <div class="form-group{{ $errors->has('class_name') ? ' has-error' : '' }}">
-    {!! Form::label('class_name', 'Class') !!}
-    {!! Form::select('class_name_id', $class_names->class_name, null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Select your Class']) !!}
-    <small class="text-danger">{{ $errors->first('class_name') }}</small>
-</div>
+        <div class="form-group{{ $errors->has('class_name_id') ? ' has-error' : '' }}">
+        {!! Form::label('class_name', 'Class') !!}
+        <select class="form-control" name="class_name_id" required>
+            @foreach($class_names as $class_name)
+                <option value="{{ $class_name->id }}">{{ $class_name->class_name }}</option>
+            @endforeach
+        </select>
+        <small class="text-danger">{{ $errors->first('class_name_id') }}</small>
+    </div>
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Schoolership Exam Given Before') !!}
           {!! Form::text('schooler_ship', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Schoolership']) !!}
