@@ -12,17 +12,37 @@
         'csrfToken' => csrf_token(),
     ]); ?>
   </script>
-@endsection
+
+  <style>
+    .video {
+      height: 200px;
+      border-radius: 30px;
+      margin-left: 300px;
+    }
+
+  </style>
+   @endsection
 
 @section('top_bar')
   <nav class="navbar navbar-default navbar-static-top">
     <div class="logo-main-block">
       <div class="container">
-        @if ($setting)
+        <div class="row">
+          <div class="col-md-3">
+          @if ($setting)
           <a href="{{ url('/') }}" title="{{$setting->welcome_txt}}">
             <img src="{{asset('/images/logo/'. $setting->logo)}}" class="img-responsive" alt="{{$setting->welcome_txt}}">
           </a>
         @endif
+          </div>
+          <div class="col-md-3">
+          
+        
+        </div>
+          <div class="col-md-3">
+          <video class="video" id="preview"></video>  
+        
+        </div>
       </div>
     </div>
     <div class="nav-bar">
@@ -200,6 +220,48 @@
      // end all controller is disable
  </script>
 
-
 @endif
+
+ <!-- camera access -->
+ <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script type="text/javascript">
+       var scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5, mirror: false });
+    scanner.addListener('scan',function(content){
+        alert(content);
+        //window.location.href=content;
+    });
+    Instascan.Camera.getCameras().then(function (cameras){
+        if(cameras.length>0){
+            scanner.start(cameras[0]);
+            $('[name="options"]').on('change',function(){
+                if($(this).val()==1){
+                    if(cameras[0]!=""){
+                        scanner.start(cameras[0]);
+                    }else{
+                        alert('No Front camera found!');
+                    }
+                }else if($(this).val()==2){
+                    if(cameras[1]!=""){
+                        scanner.start(cameras[1]);
+                    }else{
+                        alert('No Back camera found!');
+                    }
+                }
+            });
+        }else{
+            console.error('No cameras found.');
+            alert('No cameras found.');
+        }
+    }).catch(function(e){
+        console.error(e);
+        alert(e);
+    });
+
+    // 
+    scanner.addListener('scan', function(c){
+        document.getElementById('product_id').value = c;
+        document.getElementById('form').submit();
+    })
+    </script>
+
 @endsection

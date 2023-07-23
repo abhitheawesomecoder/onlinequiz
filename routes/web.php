@@ -29,6 +29,10 @@ Route::group(['middleware'=> 'coming_soon'], function(){
     return view('index');
 });
 
+  Route::get('/drapjkalam', function () {
+    return view('drapj');
+});
+
   /*facebook login route*/
   // Route::get('login/o_auth/facebook  ', 'Auth\LoginController@redirectToProvider');
   // Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

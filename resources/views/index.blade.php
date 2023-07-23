@@ -281,9 +281,9 @@
         <section class="slider-section">
             <div class="slider-wrapper">
                 <div id="main-slider" class="nivoSlider">
-                    <img src="{{ asset('frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-1"/>
+                    <img src="{{ asset('frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-1"/>
                     <img src="{{ asset('frontend/icon/second_banner.jpg')}}" alt="" title="#slider-caption-2"/>
-                    <img src="{{ asset('frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-3"/>
+                    <img src="{{ asset('frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-3"/>
                     
                 </div><!-- /#main-slider -->
 
@@ -292,9 +292,9 @@
                         <div class="table-cell">
                             <div class="container">
                                <div class="slider-text">
-                                   <h5 class="wow cssanimation fadeInBottom">Join Us Today</h5>
+                                   <h5 class="wow cssanimation fadeInBottom">Dr APJ. Abdul Kalam Talent Search Examination 2023.</h5>
                                    <h1 class="wow cssanimation leFadeInRight sequence">Better Life for People</h1>
-                                    <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Help today because tomorrow you may be the one who needs helping! <br>Forget what you can get and see what you can give.</p>
+                                    <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Maharashtra’s biggest online scholarship fest for 3rd to 10th std students.<br> Register now to win scholarship and exciting awards!</p>
                                     <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
                                     <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donet Now</a>
                                 </div>
@@ -584,7 +584,8 @@
                             <!-- <div class="donation-box">
                                 <h3><i class="ti-bar-chart"></i>Goal: $450000</h3>
                                 <h3><i class="ti-thumb-up"></i>Raised: $55000</h3>
-                            </div> -->JOIN US</a>
+                            </div> -->
+                            <a href="{{ url('drapjkalam') }}" class="default-btn">Join Us</a>
                         </div>
                     </div>
                     <!-- <div class="col-md-6 xs-padding">

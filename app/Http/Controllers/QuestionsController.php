@@ -42,31 +42,50 @@ class QuestionsController extends Controller
      */
     public function importExcelToDB(Request $request)
     {
-       $validator = Validator::make(
-        [
-            'question_file' => $request->question_file,
-            'extension' => strtolower($request->question_file->getClientOriginalExtension()),
-        ],
-        [
-            'question_file' => 'required',
-            'extension' => 'required|in:xlsx,xls,csv',
-        ]
-      );
-
-      if ($validator->fails()) 
-      {
-        return back()->withErrors('deleted','Invalid file format Please use xlsx and csv file format !');
-      }
-
-      if($request->hasFile('question_file'))
-      {
-        // return $request->file('question_file');
-        Excel::import(new QuestionsImport, $request->file('question_file'));
-        return back()->with('added', 'Question Imported Successfully');
-      }
+        $validator = Validator::make(
+            [
+                'question_file' => $request->question_file,
+                'extension' => strtolower($request->question_file->getClientOriginalExtension()),
+            ],
+            [
+                'question_file' => 'required',
+                'extension' => 'required|in:xlsx,xls,csv',
+            ]
+        );
+    
+        if ($validator->fails()) {
+            return back()->withErrors('deleted', 'Invalid file format. Please use xlsx and csv file formats!');
+        }
+    
+        if ($request->hasFile('question_file')) {
+            $file = $request->file('question_file');
+            $importedData = Excel::toArray(new QuestionsImport, $file);
+    
+            if (!empty($importedData) && isset($importedData[0]) && count($importedData[0]) > 0) {
+                foreach ($importedData[0] as $row) {
+                    // Assuming the column headings in the Excel/CSV file match the field names in the database
+                    $question = [
+                        'topic_id' => $row['topic_id'],
+                        'question' => $row['question'],
+                        'a' => $row['a'],
+                        'b' => $row['b'],
+                        'c' => $row['c'],
+                        'd' => $row['d'],
+                        'answer' => $row['answer'],
+                        'code_snippet' => $row['code_snippet'],
+                        'answer_exp' => $row['answer_exp'],
+                    ];
+    
+                    // Insert the question into the database
+                    Question::create($question);
+                }
+                return back()->with('added', 'Questions Imported Successfully');
+            } else {
+                return back()->with('deleted', 'The file seems to be empty. Please check the file.');
+            }
+        }
         return back()->with('deleted', 'Request data does not have any files to import');
     }
-
     /**
      * Store a newly created resource in storage.
      *
