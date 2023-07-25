@@ -612,34 +612,34 @@
                         <div class="team-wrap row">
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('frontend/icon/volunteer1.jpg')}} " alt="team">
+                                   <img src="{{ asset('frontend/icon/pradnya.png')}} " alt="team">
                                    
                                     <div class="hover">
-                                        <h3>Jonathan Smith <span>Communicator</span></h3>
+                                        <h3>Ms.Pradnya Mandale <span>Communicator</span></h3>
                                     </div>
                                 </div>
                             </div><!-- /Team-1 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('frontend/icon/volunteer2.jpg')}}" alt="team">
+                                   <img src="{{ asset('frontend/icon/yogesh.png')}}" alt="team">
                                     <div class="hover">
-                                        <h3>Angelina Rose <span>Certified Reader</span></h3>
+                                        <h3>Mr.Yogesh Chavan <span>Certified Reader</span></h3>
                                     </div>
                                 </div>
                             </div><!-- /Team-2 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                    <img src="{{ asset('frontend/icon/volunteer3.jpg')}}" alt="team">
+                                    <img src="{{ asset('frontend/icon/deepak.png')}}" alt="team">
                                     <div class="hover">
-                                        <h3>Taylor Swift <span>Event Creator</span></h3>
+                                        <h3>Mr.Deepak Nand <span>Event Creator</span></h3>
                                     </div>
                                 </div>
                             </div><!-- /Team-3 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('frontend/icon/volunteer4.webp')}}" alt="team">
+                                   <img src="{{ asset('frontend/icon/Krishna.jpg')}}" alt="team">
                                     <div class="hover">
-                                        <h3>Michel Brown <span>Internet Specialist</span></h3>
+                                        <h3>Mr.Krishna Kushare<span>Internet Specialist</span></h3>
                                     </div>
                                 </div>
                             </div><!-- /Team-4 -->
