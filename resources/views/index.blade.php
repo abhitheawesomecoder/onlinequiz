@@ -255,7 +255,7 @@
                     <div class="bottom-content-wrap row">
                         <div class="col-sm-4">
                             <div class="site-branding">
-                                <a href="#">
+                                <a href="{{url ('/')}}">
                                     <img src="{{ asset('frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
                             </div>
                         </div>
@@ -267,9 +267,9 @@
                                 <li><a href="#our-vission">Our Vission</a></li>
                                 <li><a href="#our-volunteer">Our Volunteer</a></li>
                                 <li><a href="#what-people-say">What people say</a></li>
-                                <li> <a href="contact.html">Contact Us</a></li>
+                                <li> <a href="#contact-us">Contact Us</a></li>
                             </ul>
-                            <a href="#" class="default-btn">JOIN US</a>
+                            <a href="{{url('/login')}}" class="default-btn">LOGIN</a>
                        </div>
                     </div>
                 </div>
@@ -295,8 +295,8 @@
                                    <h5 class="wow cssanimation fadeInBottom">Dr APJ. Abdul Kalam Talent Search Examination 2023.</h5>
                                    <h1 class="wow cssanimation leFadeInRight sequence">Better Life for People</h1>
                                     <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Maharashtra’s biggest online scholarship fest for 3rd to 10th std students.<br> Register now to win scholarship and exciting awards!</p>
-                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
-                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donet Now</a>
+                                    <a href="{{url('/drapjkalam')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register Now</a>
+                                    <a href="{{url('.logins')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Login</a>
                                 </div>
                            </div>
                         </div>
@@ -309,7 +309,7 @@
                                <div class="slider-text">
                                     <h1 class="wow cssanimation fadeInTop" data-wow-delay="1s" data-wow-duration="800ms">Together we  <br>can make a Difference</h1>
                                     <p class="wow cssanimation fadeInBottom" data-wow-delay="1s">Help today because tomorrow you may be the one who needs helping! <br>Forget what you can get and see what you can give.</p>
-                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
+                                    <a href="#our-volunteer" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
                                     <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donet Now</a>
                                 </div>
                            </div>
@@ -585,7 +585,7 @@
                                 <h3><i class="ti-bar-chart"></i>Goal: $450000</h3>
                                 <h3><i class="ti-thumb-up"></i>Raised: $55000</h3>
                             </div> -->
-                            <a href="{{ url('drapjkalam') }}" class="default-btn">Join Us</a>
+                            <a href="{{ url('drapjkalam') }}" class="default-btn">Registrt Now</a>x
                         </div>
                     </div>
                     <!-- <div class="col-md-6 xs-padding">
@@ -657,7 +657,7 @@
                                 <li><i class="fa fa-check"></i>No goal requirements.</li>
                                 <li><i class="fa fa-check"></i>Joining is tottaly free. We dont need any money from you.</li>
                             </ul>
-                            <a href="#" class="default-btn">Join With Us</a>
+                            <a href="#our-volunteer" class="default-btn">Join With Us</a>
                         </div>
                     </div>
                 </div>
@@ -882,7 +882,7 @@
         </div> -->
         <!-- ./Sponsor Section -->
         
-        <section class="widget-section padding">
+        <section id="contact-us" class="widget-section padding">
             <div class="container">
                 <div class="widget-wrap row">
                     <div class="col-md-4 xs-padding">
@@ -916,7 +916,7 @@
                             <ul class="address">
                                 <li><i class="ti-email"></i> jisarfoundation@gmail.com</li>
                                 <li><i class="ti-mobile"></i> +917972811009</li>
-                                <li><i class="ti-world"></i> Www.YourWebsite.com</li>
+                                <li><i class="ti-world"></i> www.Jisar.in </li>
                                 <li><i class="ti-location-pin"></i> Indiranagar, Nashik, Mh India 422009</li>
                             </ul>
                         </div>
@@ -929,15 +929,9 @@
 			<div class="container">
                 <div class="row">
                     <div class="col-md-6 sm-padding">
-                        <div class="copyright">&copy; 2021 Charitify Powered by DynamicLayers</div>
+                        <div class="copyright">&copy; 2023 Jisar Foundation</div>
                     </div>
-                    <div class="col-md-6 sm-padding">
-                        <ul class="footer-social">
-                            <li><a href="#">Orders</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Report Problem</a></li>
-                        </ul>
-                    </div>
+                   
                 </div>
 			</div>
 		</footer><!-- /Footer Section -->
