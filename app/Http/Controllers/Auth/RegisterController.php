@@ -54,11 +54,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // dd($data);
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'class_name_id' =>'required'
         ],
 
        [     'name.required' => 'Name cannot be empty',
@@ -81,27 +81,20 @@ class RegisterController extends Controller
         // dd($data);
         $setting = Setting::find(1);
 
-        
-
-        $studen_class = new StudentClass();
-        $studen_class->class_name_id = $data['class_name_id'];
-        $studen_class->student_name = $data['student_name'];
-        $studen_class->school_name = $data['school_name'];
-        $studen_class->mobile_num = $data['mobile_num'];
-        $studen_class->adhaar_card_num = $data['adhaar_card_num'];
-        $studen_class->student_email = $data['student_email'];
-        $studen_class->class_teacher = $data['class_teacher'];
-        $studen_class->division = $data['division'];
-        $studen_class->fav_subject = $data['fav_subject'];
-        $studen_class->schooler_ship = $data['schooler_ship'];
-        $studen_class->save();
 
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'mobile' => $data['mobile'],
             'role' => 'S',
-            'class_name_id'=> $data['class_name_id'],
+            'class_name' => $data['class_name'],
+            'school_name' => $data['school_name'],
+            'division' => $data['division'],
+            'adhaar_card_num' => $data['adhaar_card_num'],
+            'class_teacher' => $data['class_teacher'],
+            'fav_subject' => $data['fav_subject'],
+            'schooler_ship' => $data['schooler_ship'],
         ]);
 
 

@@ -255,7 +255,7 @@
                     <div class="bottom-content-wrap row">
                         <div class="col-sm-4">
                             <div class="site-branding">
-                                <a href="#">
+                                <a href="{{url ('/')}}">
                                     <img src="{{ asset('frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
                             </div>
                         </div>
@@ -269,7 +269,7 @@
                                 <li><a href="#what-people-say">What people say</a></li>
                                 <li> <a href="contact.html">Contact Us</a></li>
                             </ul>
-                            <a href="#" class="default-btn">JOIN US</a>
+                            <a href="{{url('/login')}}" class="default-btn">LOG IN</a>
                        </div>
                     </div>
                 </div>
@@ -292,8 +292,8 @@
                         <div class="table-cell">
                             <div class="container">
                                <div class="slider-text">
-                                   <h5 class="wow cssanimation fadeInBottom">Dr APJ. Abdul Kalam Talent Search Examination 2023.</h5>
-                                   <h1 class="wow cssanimation leFadeInRight sequence">Better Life for People</h1>
+                                   <h5 class="wow cssanimation fadeInBottom"></h5>
+                                   <h1 class="wow cssanimation leFadeInRight sequence">Dr APJ. Abdul Kalam Talent Search Examination 2023.</h1>
                                     <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Maharashtra’s biggest online scholarship fest for 3rd to 10th std students.<br> Register now to win scholarship and exciting awards!</p>
                                     <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
                                     <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donet Now</a>
@@ -420,7 +420,14 @@
                 </div><!-- /Section Heading -->
                 
             </div>
+            <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <a  href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register</a>
+            </div>
+            </div>
         </section>
+
+        
        
     
         <section class="widget-section padding">

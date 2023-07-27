@@ -14,6 +14,7 @@
     <div class="margin-bottom">
       <button type="button" class="btn btn-wave" data-toggle="modal" data-target="#createModal">Add Student</button>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#AllDeleteModal">Delete All Students</button>
+      <button type="button" class="btn btn-wave" data-toggle="modal" data-target="#importStudents">Import Students</button>
     </div>
     <!-- All Delete Button -->
     <div id="AllDeleteModal" class="delete-modal modal fade" role="dialog">
@@ -112,6 +113,43 @@
         </div>
       </div>
     </div>
+    <!-- Import Students -->
+  <div id="importStudents" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Import Students (Excel File With Exact Header of DataBase Field)</h4>
+        </div>
+
+        <!-- Modal to import question -->
+        {!! Form::open(['method' => 'POST', 'action' => 'UsersController@importExcelToDB', 'files' => true]) !!}
+          <div class="modal-body">
+            
+            <div class="form-group{{ $errors->has('student_file') ? ' has-error' : '' }}">
+              {!! Form::label('student_file', 'Import Students Via Excel File', ['class' => 'col-sm-3 control-label']) !!}
+              <span class="required">*</span>
+              <div class="col-sm-9">
+                {!! Form::file('student_file', ['required' => 'required']) !!}
+                <p class="help-block">Only Excel File (.CSV and .XLS)</p>
+                <small class="text-danger">{{ $errors->first('student_file') }}</small>
+              </div>
+            </div>
+          </div>
+
+     
+
+          <!-- Reset and Import button -->
+          <div class="modal-footer">
+            <div class="btn-group pull-right">
+              {!! Form::reset("Reset", ['class' => 'btn btn-default']) !!}
+              {!! Form::submit("Import", ['class' => 'btn btn-wave']) !!}
+            </div>
+          </div>
+        {!! Form::close() !!}
+      </div>
+    </div>
+  </div>
     <div class="content-block box">
       <div class="box-body table-responsive">
         <table id="usersTable" class="table table-striped">

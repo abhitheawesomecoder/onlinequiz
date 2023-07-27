@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\StudentsImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Avatar;
 use Yajra\DataTables\Facades\DataTables;
+
+use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UsersController extends Controller
 {
@@ -154,6 +158,76 @@ class UsersController extends Controller
 
           
         
+    }
+
+    
+  public function importExcelToDB(Request $request)
+  {
+    // dd($request->all());
+    $validator = Validator::make(
+      [
+          'student_file' => $request->student_file,
+          'extension' => strtolower($request->student_file->getClientOriginalExtension()),
+      ],
+      [
+          'student_file' => 'required',
+          'extension' => 'required|in:xlsx,xls,csv',
+      ]
+  );
+
+  if ($validator->fails()) {
+      return back()->withErrors('deleted', 'Invalid file format. Please use xlsx and csv file formats!');
+  }
+
+  if ($request->hasFile('student_file')) {
+      $file = $request->file('student_file');
+      $importedData = Excel::toArray(new StudentsImport, $file);
+
+      if (!empty($importedData) && isset($importedData[0]) && count($importedData[0]) > 0) {
+          $importedStudents = 0; // Track the number of imported students
+
+          foreach ($importedData[0] as $row) {
+              // Assuming the column headings in the Excel/CSV file match the field names in the database
+              $studentData = [
+                  'name' => $row['name'],
+                  'email' => $row['email'],
+                  'password' => bcrypt($row['password']), // Make sure the passwords are hashed
+                  'mobile' => $row['mobile'],
+                  'role' => 'S',
+                  'class_name' => $row['class_name'],
+                  'school_name' => $row['school_name'],
+                  'division' => $row['division'],
+                  'adhaar_card_num' => $row['adhaar_card_num'],
+                  'class_teacher' => $row['class_teacher'],
+                  'fav_subject' => $row['fav_subject'],
+                  'schooler_ship' => $row['schooler_ship'],
+              ];
+
+              // Check if a student with the same email already exists in the database
+              $existingStudent = User::where('email', $studentData['email'])->first();
+
+              if ($existingStudent) {
+                  continue; // Skip the student as they already exist in the database
+              }
+
+              // Insert the student into the database
+              User::create($studentData);
+
+              $importedStudents++;
+          }
+
+          if ($importedStudents > 0) {
+              return back()->with('added', $importedStudents . ' Student(s) Imported Successfully');
+          } else {
+              return back()->with('deleted', 'All students in the file seem to be duplicates. No new students imported.');
+          }
+      } else {
+          return back()->with('deleted', 'The file seems to be empty. Please check the file.');
+      }
+  }
+
+  return back()->with('deleted', 'Request data does not have any files to import');
+
     }
 
     /**

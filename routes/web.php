@@ -71,6 +71,9 @@ Route::group(['middleware'=> 'coming_soon'], function(){
 
   Route::resource('/admin/users', 'UsersController');
 
+  
+  Route::post('/admin/users/import_students', 'UsersController@importExcelToDB')->name('import_students');
+
   Route::get('/admin/profile', function(){
     if (Auth::check()) {
       return view('admin.users.profile');

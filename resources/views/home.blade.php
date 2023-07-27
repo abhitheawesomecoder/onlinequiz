@@ -65,13 +65,13 @@
                     </ul>
                   </li>
                  
-                  <li><a href="{{ route('faq.get') }}">FAQ</a></li>
+                  <!-- <li><a href="{{ route('faq.get') }}">FAQ</a></li>
                 @endguest
                   @if(!empty($menus))
                     @foreach($menus as $menu)
                       <li><a href="{{ url('pages/'.$menu->slug) }}">{{$menu->name}}</a></li>
                     @endforeach
-                  @endif
+                  @endif -->
               </ul>
             </div>
           </div>
@@ -84,11 +84,13 @@
 @section('content')
 <div class="container">
   @if ($auth)
+  
     <div class="quiz-main-block">
       <div class="row">
         @if ($topics)
           @foreach ($topics as $topic)
-            <div class="col-md-4">
+          @if($topic->title == auth()->user()->class_name)
+          <div class="col-md-4">
               <div class="topic-block">
                 <div class="card blue-grey darken-1">
                   <div class="card-content white-text">
@@ -192,6 +194,7 @@
                 </div>
               </div>
             </div>
+            @endif
           @endforeach
         @endif
       </div>
