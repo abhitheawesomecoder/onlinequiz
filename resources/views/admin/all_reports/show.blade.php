@@ -45,12 +45,16 @@
                   @foreach ($answers as $answer)
                     @if ($answer->user_id == $student->id && $answer->answer == $answer->user_answer)
                       @php
-                       $mark++;
+                       $mark = $mark + $topic->per_q_mark;
+                      @endphp
+                    @else
+                      @php
+                       $mark = $mark - 5;
                       @endphp
                     @endif
                   @endforeach
                   @php
-                    $correct = $mark*$topic->per_q_mark;
+                    $correct = $mark;
                   @endphp
                   {{$correct}}
                 </td>
