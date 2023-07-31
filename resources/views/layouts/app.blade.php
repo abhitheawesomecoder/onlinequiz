@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/ico" href="{{asset('/images/logo/'. $setting->favicon)}}">
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/custom-style.css')}}">
+    <link rel="icon" type="image/ico" href="{{asset('public/images/logo/'. $setting->favicon)}}">
+    <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/custom-style.css')}}">
     <!--[if IE]>
     <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
     <![endif]-->
@@ -51,8 +51,8 @@
         </div>
     </div>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/custom-js.js') }}"></script>
+    <script src="{{ asset('public/js/app.js') }}"></script>
+    <script src="{{ asset('public/js/custom-js.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

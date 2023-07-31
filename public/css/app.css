@@ -8289,7 +8289,7 @@ button.btn-wave {
   border: none;
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #AA2672;
   text-align: center;
   letter-spacing: 0.5px;
   transition: 0.2s ease-out;
@@ -8519,7 +8519,7 @@ button.btn-wave {
 .nav-bar {
   padding: 7px 0 3px;
   box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.08);
-  background-color: #424242;
+  background-color: #AA2672;
 }
 
 .home-main-block blockquote {
@@ -8730,7 +8730,7 @@ button.btn-wave {
   position: absolute;
   right: 0;
   top: 3.5px;
-  color: #424242;
+  color: white;
 }
 
 .result-table {
@@ -8749,7 +8749,7 @@ button.btn-wave {
   z-index: 1;
   padding:15px;
   color: #FFF;
-  background-color:#424242; 
+  background-color:#AA2672; 
   position: fixed; 
   width: 100%; 
   bottom: 0;

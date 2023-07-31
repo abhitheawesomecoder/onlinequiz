@@ -1,24 +1,45 @@
 @extends('layouts.app')
 
 @section('head')
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+  <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
   <script>
     window.Laravel =  <?php echo json_encode([
         'csrfToken' => csrf_token(),
     ]); ?>
   </script>
+
+<style>
+    .video {
+      height: 200px;
+      border-radius: 30px;
+      margin-left: 300px;
+    }
+
+  </style>
 @endsection
 
 @section('top_bar')
   <nav class="navbar navbar-default navbar-static-top">
     <div class="logo-main-block">
       <div class="container">
-        @if ($setting)
+        <div class="row">
+          <div class="col-md-3">
+          @if ($setting)
           <a href="{{ url('/') }}" title="{{$setting->welcome_txt}}">
-            <img src="{{asset('/images/logo/'. $setting->logo)}}" class="img-responsive" alt="{{$setting->welcome_txt}}">
+          <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
           </a>
-        @endif
+          @endif
+          </div>
+          <div class="col-md-3">
+          
+        
+        </div>
+          <div class="col-md-3">
+          <video class="video" id="preview"></video>  
+        
+        </div>
+      </div>
       </div>
     </div>
     <div class="nav-bar">
@@ -28,7 +49,7 @@
             <div class="navbar-header">
               <!-- Branding Image -->
               @if($setting)
-                <a class="tt" title="Quick Quiz Home" href="{{url('/')}}"><h4 class="heading">{{$setting->welcome_txt}}</h4></a>
+                <a class="tt" title="Quick Quiz Home" href="{{url('/')}}"><h4 class="heading">Jisar Foundation</h4></a>
               @endif
             </div>
           </div>
@@ -36,6 +57,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
               <!-- Right Side Of Navbar -->
               <ul class="nav navbar-nav navbar-right">
+              <li> <a id="google_translate_element"></a> </li>
                 <!-- Authentication Links -->
                 @guest
                   <li><a href="{{ route('login') }}" title="Login">Login</a></li>
@@ -46,12 +68,13 @@
                       {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     
+                    
                     <ul class="dropdown-menu" id="dropdown">
-                      @if ($auth->role == 'A')
+                      <!-- @if ($auth->role == 'A')
                         <li><a href="{{url('/admin')}}" title="Dashboard">Dashboard</a></li>
                       @elseif ($auth->role == 'S')
                         <li><a href="{{url('/admin/my_reports')}}" title="Dashboard">Dashboard</a></li>
-                      @endif
+                      @endif -->
                       <li>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -86,11 +109,12 @@
   @if ($auth)
   
     <div class="quiz-main-block">
+      <!-- instruction box -->
       <div class="row">
         @if ($topics)
           @foreach ($topics as $topic)
           @if($topic->title == auth()->user()->class_name)
-          <div class="col-md-4">
+          <div id="cartSection" class="col-md-4">
               <div class="topic-block">
                 <div class="card blue-grey darken-1">
                   <div class="card-content white-text">
@@ -193,7 +217,7 @@
                   </div> --}}
                 </div>
               </div>
-            </div>
+          </div>
             @endif
           @endforeach
         @endif
@@ -205,10 +229,10 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="home-main-block">
               @if ($setting)
-                <h1 class="main-block-heading text-center">{{$setting->welcome_txt}}</h1>
+                <h1 class="main-block-heading text-center">Jisar Foundation</h1>
               @endif
                 <blockquote>
-                  Please <a href="{{ route('login') }}">Login</a> To Start Quiz >>>
+                  Please <a href="{{ route('login') }}">Login</a> To Jissar Foundation >>>
                 </blockquote>
             </div>
         </div>
@@ -270,6 +294,80 @@
      // end all controller is disable
  </script>
 
+
+
+@endif
+
+@if($auth)
+ 
+<!-- camera access -->
+<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+<script type="text/javascript">
+    function showCartSection() {
+        document.getElementById("cartSection").style.display = "block";
+    }
+
+    function hideCartSection() {
+        document.getElementById("cartSection").style.display = "none";
+    }
+
+    // Function to check camera access and show/hide cart section accordingly
+    function checkCameraAccess() {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                // Camera access is allowed
+                showCartSection();
+
+                // Display camera preview in the video element
+                const videoElement = document.getElementById("preview");
+                videoElement.srcObject = stream;
+
+                // Create a track ended event listener to handle manual closing of the camera
+                stream.getVideoTracks()[0].onended = function () {
+                    hideCartSection();
+                };
+
+                var scanner = new Instascan.Scanner({ video: videoElement, scanPeriod: 5, mirror: false });
+                scanner.addListener('scan', function (content) {
+                    alert(content);
+                    //window.location.href=content;
+                });
+
+                Instascan.Camera.getCameras().then(function (cameras) {
+                    // Your existing camera code here
+                    // ...
+                }).catch(function (e) {
+                    console.error(e);
+                    alert(e);
+                });
+
+                // Rest of your existing code for scanner
+
+            })
+            .catch(function (err) {
+                // Camera access is not allowed or not available
+                hideCartSection();
+            });
+    }
+
+    // Call the checkCameraAccess function when the page loads
+    document.addEventListener('DOMContentLoaded', checkCameraAccess);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,mr',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            multilanguagePage: true
+        }, 'google_translate_element');
+    }
+</script>
 
 @endif
 @endsection

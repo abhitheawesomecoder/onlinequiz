@@ -34,7 +34,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/payment';
 
     /**
      * Create a new controller instance.
@@ -59,14 +59,20 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'mobile' => 'unique:users|min:10|max:10',
+            'adhaar_card_num' => 'unique:users|min:12|max:12',
         ],
 
        [     'name.required' => 'Name cannot be empty',
                    'email.required' => 'Email field is required',
                    'email.unique' => 'Email has been already taken !',
+                   'mobile.unique' => 'Mobile number has been already taken !',
+                   'adhaar_card_num.unique' => 'Adhar number has been already taken !',
                    'password.required' => 'Password cannot be empty',
                    'password.min' => 'Min Password length must be 6',
-                   'password.confirmed' => "Password doesn't match",]
+                   'password.confirmed' => "Password doesn't match",
+                   
+        ]
             );
     }
 

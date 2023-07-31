@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
 use Auth;
+use Illuminate\Http\Request;
 use Hash;
 
 class LoginController extends Controller
@@ -21,6 +22,30 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'identity' => 'required',
+            'password' => 'required',
+        ]);
+
+        $identity = $request->input('identity');
+        $password = $request->input('password');
+
+        // Determine if the user entered an email or a mobile number
+        $loginType = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'mobile';
+
+        // Attempt to authenticate the user using email or mobile number
+        if (Auth::attempt([$loginType => $identity, 'password' => $password])) {
+            // Authentication passed
+            return redirect()->intended('/admin');  
+        } else {
+            // Authentication failed
+            return back()->withErrors(['identity' => 'Invalid credentials']);
+        }
+    }
+
 
     use AuthenticatesUsers;
 

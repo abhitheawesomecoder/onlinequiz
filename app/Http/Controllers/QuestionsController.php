@@ -6,6 +6,8 @@ use App\Imports\QuestionsImport;
 use Illuminate\Http\Request;
 use App\Topic;
 use App\Question;
+use App\topic_user;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use Yajra\DataTables\Facades\DataTables;
@@ -74,8 +76,8 @@ class QuestionsController extends Controller
                     'c' => $row['c'],
                     'd' => $row['d'],
                     'answer' => $row['answer'],
-                    'code_snippet' => $row['code_snippet'],
-                    'answer_exp' => $row['answer_exp'],
+                    'code_snippet' => $row['code_snippet'] ?? null,
+                    'answer_exp' => $row['answer_exp'] ?? null,
                 ];
 
                 // Check if the question already exists in the database based on the question text and topic_id
@@ -88,9 +90,15 @@ class QuestionsController extends Controller
                 }
 
                 // Insert the question into the database
-                Question::create($question);
-
-                $importedQuestions++;
+                try {
+                    // Insert the student into the database
+                    Question::create($question);
+                    $importedQuestions++;
+                } catch (\Exception $e) {
+                    // Log the error or handle it as needed
+                    // In this case, we'll just continue with the import process
+                    continue;
+                }
             }
 
             if ($importedQuestions > 0) {
@@ -113,6 +121,8 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
+
+       
 
         $request->validate([
           'topic_id' => 'required',

@@ -28,7 +28,17 @@
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                   {!! Form::label('title', 'Quiz Title') !!}
                   <span class="required">*</span>
-                  {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Quiz Title', 'required' => 'required']) !!}
+                  <!-- {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Quiz Title', 'required' => 'required']) !!} -->
+                      <select class="form-control" name="title" required>
+                        <option value="3rd Class">3rd Class</option>
+                        <option value="4th Class">4th Class</option>
+                        <option value="5th Class">5th Class</option>
+                        <option value="6th Class">6th Class</option>
+                        <option value="7th Class">7th Class</option>
+                        <option value="8th Class">8th Class</option>
+                        <option value="9th Class">9th Class</option>
+                        <option value="10th Class">10h Class</option>
+                      </select>
                   <small class="text-danger">{{ $errors->first('title') }}</small>
                 </div>
                 <div class="form-group{{ $errors->has('per_q_mark') ? ' has-error' : '' }}">
@@ -100,6 +110,7 @@
         <thead>
           <tr>
             <th>#</th>
+            <th>ID</th>
             <th>Quiz Title</th>
             <th>Description</th>
             <th>Per Question Mark</th>
@@ -174,6 +185,7 @@ $(function () {
       columns: [
 
       {data: 'DT_RowIndex', name: 'DT_RowIndex',orderable: false, searchable: false},
+      {data: 'id', name: 'id'},
       {data: 'title', name: 'title'},
       {data: 'description', name: 'description'},
       {data: 'per_q_mark', name: 'per_q_mark'},

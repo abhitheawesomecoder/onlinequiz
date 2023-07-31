@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('head')
-  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
   <script>
     window.Laravel =  <?php echo json_encode([
         'csrfToken' => csrf_token(),
@@ -31,7 +31,8 @@
           <div class="col-md-3">
           @if ($setting)
           <a href="{{ url('/') }}" title="{{$setting->welcome_txt}}">
-            <img src="{{asset('/images/logo/'. $setting->logo)}}" class="img-responsive" alt="{{$setting->welcome_txt}}">
+          <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
+
           </a>
         @endif
           </div>
@@ -115,11 +116,11 @@
 
 @section('scripts')
   <!-- jQuery 3 -->
-  <script src="{{asset('js/jquery.min.js')}}"></script>
+  <script src="{{asset('public/js/jquery.min.js')}}"></script>
   <!-- Bootstrap 3.3.7 -->
-  <script src="{{asset('js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/jquery.cookie.js')}}"></script>
-  <script src="{{asset('js/jquery.countdown.js')}}"></script>
+  <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('public/js/jquery.cookie.js')}}"></script>
+  <script src="{{asset('public/js/jquery.countdown.js')}}"></script>
 
   @if(!empty($que) && empty($users))
    <script>
@@ -264,4 +265,19 @@
     })
     </script>
 
+    
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,mr',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            multilanguagePage: true
+        }, 'google_translate_element');
+    }
+</script>
 @endsection

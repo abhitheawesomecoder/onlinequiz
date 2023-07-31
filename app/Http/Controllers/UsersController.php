@@ -202,7 +202,7 @@ class UsersController extends Controller
                   'fav_subject' => $row['fav_subject'],
                   'schooler_ship' => $row['schooler_ship'],
               ];
-
+              // dd($studentData);
               // Check if a student with the same email already exists in the database
               $existingStudent = User::where('email', $studentData['email'])->first();
 
@@ -211,9 +211,15 @@ class UsersController extends Controller
               }
 
               // Insert the student into the database
-              User::create($studentData);
-
-              $importedStudents++;
+              try {
+                // Insert the student into the database
+                User::create($studentData);
+                $importedStudents++;
+            } catch (\Exception $e) {
+                // Log the error or handle it as needed
+                // In this case, we'll just continue with the import process
+                continue;
+            }
           }
 
           if ($importedStudents > 0) {

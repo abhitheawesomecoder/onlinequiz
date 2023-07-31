@@ -26,7 +26,7 @@ class IsAdmin
 
           }
 
-          return redirect('/');
+          return redirect('/instruction');
 
         }
 

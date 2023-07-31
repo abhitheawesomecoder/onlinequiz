@@ -45,6 +45,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function findByMobileNumber($mobileNumber)
+    {
+        return $this->where('mobile_number', $mobileNumber)->first();
+    }
+
+  
 
     public function answers() {
       return $this->hasOne('App\Answer');

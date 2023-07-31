@@ -9,7 +9,7 @@
 }
 </style>
 @section('head')
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
   <script>
     window.Laravel =  <?php echo json_encode([
         'csrfToken' => csrf_token(),
@@ -24,7 +24,7 @@
       <div class="logo">
         @if ($setting)
           <a href="{{url('/')}}" title="{{$setting->welcome_txt}}">
-            <img src="{{asset('/images/logo/'.$setting->logo)}}" class="img-responsive login-logo" alt="{{$setting->welcome_txt}}">
+            <img src="{{ asset('public/frontend/icon/logo_new.png')}}" style="height: 100px;!important " class="img-responsive login-logo" alt="{{$setting->welcome_txt}}">
           </a>
         @endif
       </div>
@@ -89,13 +89,13 @@
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Mobile Number') !!}
           <span style="color: red;">*</span>
-          {!! Form::number('mobile', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter your Mobile Number']) !!}
+          {!! Form::number('mobile', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter your Mobile Number', 'min' => '1000000000', 'max' => '9999999999']) !!}
           <small class="text-danger">{{ $errors->first('mobile') }}</small>
         </div>
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Adhar Card Number') !!}
         
-          {!! Form::number('adhaar_card_num', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter your Adhar Card Number']) !!}
+          {!! Form::number('adhaar_card_num', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter your Adhar Card Number', 'min' => '100000000000', 'max' => '999999999999']) !!}
           <small class="text-danger">{{ $errors->first('adhaar_card_num') }}</small>
         </div>
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -110,14 +110,14 @@
         <span style="color: red;">*</span>
         <select class="form-control" name="class_name" required>
          
-                <option value="3rd">3rd</option>
-                <option value="4th">4th</option>
-                <option value="5th">5th</option>
-                <option value="6th">6th</option>
-                <option value="7th">7th</option>
-                <option value="8th">8th</option>
-                <option value="9th">9th</option>
-                <option value="10th">10h</option>
+                <option value="3rd Class">3rd Class</option>
+                <option value="4th Class">4th Class</option>
+                <option value="5th Class">5th Class</option>
+                <option value="6th Class">6th Class</option>
+                <option value="7th Class">7th Class</option>
+                <option value="8th Class">8th Class</option>
+                <option value="9th Class">9th Class</option>
+                <option value="10th Class">10h Class</option>
            
         </select>
         <small class="text-danger">{{ $errors->first('class_name') }}</small>

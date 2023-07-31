@@ -14,32 +14,32 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
         <!-- Font Awesome Icons CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontend/css/font-awesome.min.css')}}">
         
         <!-- Themify Icons CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/themify-icons.css')}}">
         <!-- Elegant Font Icons CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/elegant-font-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/elegant-font-icons.css')}}">
         <!-- Elegant Line Icons CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/elegant-line-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/elegant-line-icons.css')}}">
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css')}}">
 		<!-- Venobox CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/venobox/venobox.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/venobox/venobox.css')}}">
 		<!-- OWL-Carousel CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/owl.carousel.css')}}">
         <!-- Slick Nav CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/slicknav.min.css')}}">
         <!-- Css Animation CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/css-animation.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/css-animation.min.css')}}">
         <!-- Nivo Slider CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/nivo-slider.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/nivo-slider.css')}}">
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/main.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/main.css')}}">
 		<!-- Responsive CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css')}}">
 
-        <script src="{{ asset('frontend/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+        <script src="{{ asset('public/frontend/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 
         <style>
             .img {
@@ -236,6 +236,7 @@
                             <ul class="left-info">
                                 <li><a href="#"><i class="ti-email"></i>jisarfoundation@gmail.com</a></li>
                                 <li><a href="#"><i class="ti-mobile"></i>+917972811009</a></li>
+                               
                             </ul>
                         </div>
                         <div class="col-sm-4 d-none d-md-block">
@@ -256,7 +257,7 @@
                         <div class="col-sm-4">
                             <div class="site-branding">
                                 <a href="{{url ('/')}}">
-                                    <img src="{{ asset('frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
+                                    <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
                             </div>
                         </div>
                        <div class="col-sm-8 text-right">
@@ -269,6 +270,7 @@
                                 <li><a href="#what-people-say">What people say</a></li>
                                 <li> <a href="#contact-us">Contact Us</a></li>
                             </ul>
+                            
                             <a href="{{url('/login')}}" class="default-btn">LOG IN</a>
                        </div>
                     </div>
@@ -281,9 +283,9 @@
         <section class="slider-section">
             <div class="slider-wrapper">
                 <div id="main-slider" class="nivoSlider">
-                    <img src="{{ asset('frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-1"/>
-                    <img src="{{ asset('frontend/icon/second_banner.jpg')}}" alt="" title="#slider-caption-2"/>
-                    <img src="{{ asset('frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-3"/>
+                    <img src="{{ asset('public/frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-1"/>
+                    <img src="{{ asset('public/frontend/icon/second_banner.jpg')}}" alt="" title="#slider-caption-2"/>
+                    <img src="{{ asset('public/frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-3"/>
                     
                 </div><!-- /#main-slider -->
 
@@ -449,7 +451,7 @@
                         <div class="col-6 col-mob">
                             <div class="row mob-view">
                                 <div class="col-3">
-                                    <img class="img" src="{{ asset('frontend/icon/education.webp')}}" width="100px" height="100px">
+                                    <img class="img" src="{{ asset('public/frontend/icon/education.webp')}}" width="100px" height="100px">
                                 </div>
                                 <div class="col-9">
                                     <div class="row">
@@ -472,7 +474,7 @@
                         <div class="col-6 col-mob">
                             <div class="row mob-view" >
                                 <div class="col-3">
-                                    <img class="img" src="{{ asset('frontend/icon/healthcare.webp')}}" width="100px" height="100px">
+                                    <img class="img" src="{{ asset('public/frontend/icon/healthcare.webp')}}" width="100px" height="100px">
                                 </div>
                                 <div class="col-9">
                                     <div class="row  manage_rows" >
@@ -491,7 +493,7 @@
                         <div class="col-6 col-mob">
                             <div class="row mob-view margin">
                                 <div class="col-3">
-                                    <img class="img" src="{{ asset('frontend/icon/woomen.webp')}}" width="100px" height="100px">
+                                    <img class="img" src="{{ asset('public/frontend/icon/woomen.webp')}}" width="100px" height="100px">
                                 </div>
                                 <div class="col-9">
                                     <div class="row">
@@ -510,7 +512,7 @@
                         <div class="col-6 col-mob">
                             <div class="row mob-view">
                                 <div class="col-3">
-                                    <img class="img" src="{{ asset('frontend/icon/livehood.webp')}}" width="100px" height="100px">
+                                    <img class="img" src="{{ asset('public/frontend/icon/livehood.webp')}}" width="100px" height="100px">
                                 </div>
                                 <div class="col-9">
                                     <div class="row">
@@ -560,7 +562,7 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <img class="mob_vision_img" width="500px" height="500px" src="{{ asset('frontend/icon/logo_new.png')}} ">
+                        <img class="mob_vision_img" width="500px" height="500px" src="{{ asset('public/frontend/icon/logo_new.png')}} ">
                     </div>
                 </div>
             </div>
@@ -612,7 +614,7 @@
                         <div class="team-wrap row">
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('frontend/icon/pradnya.png')}} " alt="team">
+                                   <img src="{{ asset('public/frontend/icon/pradnya.png')}} " alt="team">
                                    
                                     <div class="hover">
                                         <h3>Ms.Pradnya Mandale <span>Communicator</span></h3>
@@ -621,7 +623,7 @@
                             </div><!-- /Team-1 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('frontend/icon/yogesh.png')}}" alt="team">
+                                   <img src="{{ asset('public/frontend/icon/yogesh.png')}}" alt="team">
                                     <div class="hover">
                                         <h3>Mr.Yogesh Chavan <span>Certified Reader</span></h3>
                                     </div>
@@ -629,7 +631,7 @@
                             </div><!-- /Team-2 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                    <img src="{{ asset('frontend/icon/deepak.png')}}" alt="team">
+                                    <img src="{{ asset('public/frontend/icon/deepak.png')}}" alt="team">
                                     <div class="hover">
                                         <h3>Mr.Deepak Nand <span>Event Creator</span></h3>
                                     </div>
@@ -637,7 +639,7 @@
                             </div><!-- /Team-3 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('frontend/icon/Krishna.jpg')}}" alt="team">
+                                   <img src="{{ asset('public/frontend/icon/Krishna.jpg')}}" alt="team">
                                     <div class="hover">
                                         <h3>Mr.Krishna Kushare<span>Internet Specialist</span></h3>
                                     </div>
@@ -773,8 +775,8 @@
                              knowledge about health, hygiene, and entrepreneurship, transforming our lives for the better.
                              </p>
                         <div class="testi-footer">
-                           <img src="{{ asset('frontend/icon/ramesh2.png')}}" alt="profile">
-                            <h4>Ramesh Kumar <span>Village Resident</span></h4>
+                           <img src="{{ asset('public/frontend/icon/ramesh2.png')}}" alt="profile">
+                            <h4>Ramesh Patil <span>Village Resident</span></h4>
                         </div>
                     </div>
                     <div class="testimonial-item">
@@ -782,8 +784,8 @@
                              firsthand. Their commitment to improving education and providing employment opportunities has 
                              uplifted the entire region, giving our children a brighter future.</p>
                         <div class="testi-footer">
-                           <img src="{{ asset('frontend/icon/meera.jfif')}}" alt="profile">
-                            <h4>Meera Sharma <span>Village Teacher</span></h4>
+                           <img src="{{ asset('public/frontend/icon/meera.jfif')}}" alt="profile">
+                            <h4>Pooja Jadhav  <span>Village Teacher</span></h4>
                         </div>
                     </div>
                    
@@ -791,9 +793,9 @@
                         <p>Jisar Foundation's initiatives have made a significant impact on the lives of women in our community. Their programs have encouraged and empowered us to be 
                             financially independent, breaking the barriers of traditional norms..</p>
                         <div class="testi-footer">
-                           <img src="{{ asset('frontend/icon/pooja.jpg')}}" alt="profile">
+                           <img src="{{ asset('public/frontend/icon/pooja.jpg')}}" alt="profile">
                            <!-- {{ asset('frontend/icon/volunteer1.jpg')}} -->
-                            <h4>Pooja Verma <span>Women's Self-Help Group Member</span></h4>
+                            <h4>Meera Rajput <span>Women's Self-Help Group Member</span></h4>
                         </div>
                     </div>
                 </div>
@@ -887,7 +889,7 @@
                 <div class="widget-wrap row">
                     <div class="col-md-4 xs-padding">
                         <div class="widget-content">
-                            <img src="{{ asset('frontend/icon/logo_new.png')}}" width="100px" height="100px" style="border-radius: 10px;" alt="logo">
+                            <img src="{{ asset('public/frontend/icon/logo_new.png')}}" width="100px" height="100px" style="border-radius: 10px;" alt="logo">
                             
                             <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor</p>
                             <ul class="social-icon">
@@ -939,39 +941,39 @@
 		<a data-scroll href="#header" id="scroll-to-top"><i class="arrow_up"></i></a>
 	
 		<!-- jQuery Lib -->
-		<script src="{{asset('frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
 		<!-- Bootstrap JS -->
-		<script src="{{asset('frontend/js/vendor/bootstrap.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/bootstrap.min.js')}}"></script>
 		<!-- Tether JS -->
-		<script src="{{asset('frontend/js/vendor/tether.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/tether.min.js')}}"></script>
         <!-- Imagesloaded JS -->
-        <script src="{{asset('frontend/js/vendor/imagesloaded.pkgd.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/imagesloaded.pkgd.min.js')}}"></script>
 		<!-- OWL-Carousel JS -->
-		<script src="{{asset('frontend/js/vendor/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/owl.carousel.min.js')}}"></script>
 		<!-- isotope JS -->
-		<script src="{{asset('frontend/js/vendor/jquery.isotope.v3.0.2.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery.isotope.v3.0.2.js')}}"></script>
 		<!-- Smooth Scroll JS -->
-		<script src="{{asset('frontend/js/vendor/smooth-scroll.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/smooth-scroll.min.js')}}"></script>
 		<!-- venobox JS -->
-		<script src="{{asset('frontend/js/vendor/venobox.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/venobox.min.js')}}"></script>
         <!-- ajaxchimp JS -->
-        <script src="{{asset('frontend/js/vendor/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/jquery.ajaxchimp.min.js')}}"></script>
         <!-- Counterup JS -->
-		<script src="{{asset('frontend/js/vendor/jquery.counterup.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery.counterup.min.js')}}"></script>
         <!-- waypoints js -->
-		<script src="{{asset('frontend/js/vendor/jquery.waypoints.v2.0.3.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery.waypoints.v2.0.3.min.js')}}"></script>
         <!-- Slick Nav JS -->
-        <script src="{{asset('frontend/js/vendor/jquery.slicknav.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/jquery.slicknav.min.js')}}"></script>
         <!-- Nivo Slider JS -->
-        <script src="{{asset('frontend/js/vendor/jquery.nivo.slider.pack.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/jquery.nivo.slider.pack.js')}}"></script>
         <!-- Letter Animation JS -->
-		<script src="{{asset('frontend/js/vendor/letteranimation.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/letteranimation.min.js')}}"></script>
         <!-- Wow JS -->
-		<script src="{{asset('frontend/js/vendor/wow.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/wow.min.js')}}"></script>
 		<!-- Contact JS -->
-		<script src="{{asset('frontend/js/contact.js')}}"></script>
+		<script src="{{asset('public/frontend/js/contact.js')}}"></script>
 		<!-- Main JS -->
-		<script src="{{asset('frontend/js/main.js')}}"></script>
+		<script src="{{asset('public/frontend/js/main.js')}}"></script>
 
     </body>
 </html>
@@ -999,3 +1001,4 @@
         }
     });
 </script>
+

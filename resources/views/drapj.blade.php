@@ -14,32 +14,32 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
         <!-- Font Awesome Icons CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontend/css/font-awesome.min.css')}}">
         
         <!-- Themify Icons CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/themify-icons.css')}}">
         <!-- Elegant Font Icons CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/elegant-font-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/elegant-font-icons.css')}}">
         <!-- Elegant Line Icons CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/elegant-line-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/elegant-line-icons.css')}}">
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css')}}">
 		<!-- Venobox CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/venobox/venobox.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/venobox/venobox.css')}}">
 		<!-- OWL-Carousel CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/owl.carousel.css')}}">
         <!-- Slick Nav CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/slicknav.min.css')}}">
         <!-- Css Animation CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/css-animation.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/css-animation.min.css')}}">
         <!-- Nivo Slider CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/nivo-slider.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/nivo-slider.css')}}">
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/main.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/main.css')}}">
 		<!-- Responsive CSS -->
-        <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css')}}">
 
-        <script src="{{ asset('frontend/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+        <script src="{{ asset('public/frontend/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 
         <style>
             .img {
@@ -256,7 +256,7 @@
                         <div class="col-sm-4">
                             <div class="site-branding">
                                 <a href="{{url ('/')}}">
-                                    <img src="{{ asset('frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
+                                    <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
                             </div>
                         </div>
                        <div class="col-sm-8 text-right">
@@ -281,9 +281,9 @@
         <section class="slider-section">
             <div class="slider-wrapper">
                 <div id="main-slider" class="nivoSlider">
-                    <img src="{{ asset('frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-1"/>
-                    <img src="{{ asset('frontend/icon/second_banner.jpg')}}" alt="" title="#slider-caption-2"/>
-                    <img src="{{ asset('frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-3"/>
+                    <img src="{{ asset('public/frontend/icon/third_banner.jpg')}}" alt="" title="#slider-caption-1"/>
+                    <img src="{{ asset('public/frontend/icon/second_banner.jpg')}}" alt="" title="#slider-caption-2"/>
+                    <img src="{{ asset('public/frontend/icon/first_banner.jpg')}}" alt="" title="#slider-caption-3"/>
                     
                 </div><!-- /#main-slider -->
 
@@ -422,7 +422,7 @@
             </div>
             <div class="row">
             <div class="col-md-12" style="text-align: center;">
-                <a  href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register</a>
+                <a  href="{{url('/register')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register</a>
             </div>
             </div>
         </section>
@@ -493,39 +493,39 @@
 		<a data-scroll href="#header" id="scroll-to-top"><i class="arrow_up"></i></a>
 	
 		<!-- jQuery Lib -->
-		<script src="{{asset('frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
 		<!-- Bootstrap JS -->
-		<script src="{{asset('frontend/js/vendor/bootstrap.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/bootstrap.min.js')}}"></script>
 		<!-- Tether JS -->
-		<script src="{{asset('frontend/js/vendor/tether.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/tether.min.js')}}"></script>
         <!-- Imagesloaded JS -->
-        <script src="{{asset('frontend/js/vendor/imagesloaded.pkgd.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/imagesloaded.pkgd.min.js')}}"></script>
 		<!-- OWL-Carousel JS -->
-		<script src="{{asset('frontend/js/vendor/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/owl.carousel.min.js')}}"></script>
 		<!-- isotope JS -->
-		<script src="{{asset('frontend/js/vendor/jquery.isotope.v3.0.2.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery.isotope.v3.0.2.js')}}"></script>
 		<!-- Smooth Scroll JS -->
-		<script src="{{asset('frontend/js/vendor/smooth-scroll.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/smooth-scroll.min.js')}}"></script>
 		<!-- venobox JS -->
-		<script src="{{asset('frontend/js/vendor/venobox.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/venobox.min.js')}}"></script>
         <!-- ajaxchimp JS -->
-        <script src="{{asset('frontend/js/vendor/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/jquery.ajaxchimp.min.js')}}"></script>
         <!-- Counterup JS -->
-		<script src="{{asset('frontend/js/vendor/jquery.counterup.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery.counterup.min.js')}}"></script>
         <!-- waypoints js -->
-		<script src="{{asset('frontend/js/vendor/jquery.waypoints.v2.0.3.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery.waypoints.v2.0.3.min.js')}}"></script>
         <!-- Slick Nav JS -->
-        <script src="{{asset('frontend/js/vendor/jquery.slicknav.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/jquery.slicknav.min.js')}}"></script>
         <!-- Nivo Slider JS -->
-        <script src="{{asset('frontend/js/vendor/jquery.nivo.slider.pack.js')}}"></script>
+        <script src="{{asset('public/frontend/js/vendor/jquery.nivo.slider.pack.js')}}"></script>
         <!-- Letter Animation JS -->
-		<script src="{{asset('frontend/js/vendor/letteranimation.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/letteranimation.min.js')}}"></script>
         <!-- Wow JS -->
-		<script src="{{asset('frontend/js/vendor/wow.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/wow.min.js')}}"></script>
 		<!-- Contact JS -->
-		<script src="{{asset('frontend/js/contact.js')}}"></script>
+		<script src="{{asset('public/frontend/js/contact.js')}}"></script>
 		<!-- Main JS -->
-		<script src="{{asset('frontend/js/main.js')}}"></script>
+		<script src="{{asset('public/frontend/js/main.js')}}"></script>
 
     </body>
 </html>

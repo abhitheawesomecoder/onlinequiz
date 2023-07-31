@@ -5,10 +5,16 @@ use App\Topic;
 use App\Answer;
 use App\copyrighttext;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\GoogleTranslateController;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
 use App\Page;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Middleware\CheckLoginTime;
+
+  
+use App\Http\Controllers\RazorpayPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +39,12 @@ Route::group(['middleware'=> 'coming_soon'], function(){
     return view('drapj');
 });
 
+  Route::get('/instruction', function () {
+    return view('instruction');
+});
+
+Route::get('google/translate/change',[GoogleTranslateController::class,'googleTranslateChange'])->name('google.translate.change');
+
   /*facebook login route*/
   // Route::get('login/o_auth/facebook  ', 'Auth\LoginController@redirectToProvider');
   // Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
@@ -41,6 +53,8 @@ Route::group(['middleware'=> 'coming_soon'], function(){
   Route::get('login/{service}', 'Auth\LoginController@redirectToProvider')->name('sociallogin');
   Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 
+  Route::get('payment', [RazorpayPaymentController::class, 'index']);
+  Route::post('payment', [RazorpayPaymentController::class, 'store']);
 
   /*google login route*/
   // Route::get('login/google', 'Auth\LoginController@redirectToProvider');
@@ -51,12 +65,14 @@ Route::group(['middleware'=> 'coming_soon'], function(){
     return view('faq',compact('menus'));
   })->name('faq.get');
 
-  Route::get('/home', function(){
-    $topics = Topic::all();
-    $questions = Question::all();
-    $menus  = Page::where('show_in_menu','=',1)->get();
-    return view('home', compact('topics', 'questions','menus'));
-  });
+  Route::get('/home', function () {
+    return view('home', [
+        'topics' => Topic::all(),
+        'questions' => Question::all(),
+        'menus' => Page::where('show_in_menu', '=', 1)->get(),
+    ]);
+});
+// })->middleware(CheckLoginTime::class);
 
   Route::get('/redirect', function () {
       $query = http_build_query([

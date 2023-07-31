@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
   <script>
     window.Laravel =  <?php echo json_encode([
         'csrfToken' => csrf_token(),
@@ -22,7 +22,7 @@
         <div class="logo">
           @if ($setting)
             <a href="{{url('/')}}" title="{{$setting->welcome_txt}}">
-              <img src="{{asset('/images/logo/'.$setting->logo)}}" class="login-logo img-responsive" alt="{{$setting->welcome_txt}}">
+              <img src="{{ asset('public/frontend/icon/logo_new.png')}}" style="height: 100px;!important " class="login-logo img-responsive" alt="{{$setting->welcome_txt}}">
             </a>
           @endif
         </div>
@@ -64,10 +64,12 @@
         <form class="form login-form" method="POST" action="{{ route('login') }}">
           {{ csrf_field() }}
           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter Your Email" required autofocus>
-            @if ($errors->has('email'))
+            <!-- <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter Your Email" required autofocus> -->
+            <input id="identity" type="text" class="form-control" name="identity" value="{{ old('identity') }}" placeholder="Enter Your Email or Mobile Number" required autofocus>
+
+            @if ($errors->has('identity'))
               <span class="help-block">
-                <strong>{{ $errors->first('email') }}</strong>
+                <strong>{{ $errors->first('identity') }}</strong>
               </span>
             @endif
           </div>

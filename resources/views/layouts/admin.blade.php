@@ -6,26 +6,26 @@ $setting = App\Setting::first();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/ico" href="{{asset('/images/logo/'. $setting->favicon)}}">
+  <link rel="icon" type="image/ico" href="{{asset('public/images/logo/'. $setting->favicon)}}">
   <!--[if IE]>
   <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
   <![endif]-->
   <title>{{$setting->welcome_txt}} Admin Panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/ionicons.min.css')}}">
   <!-- Admin Theme style -->
-  <link rel="stylesheet" href="{{asset('css/AdminLTE.css')}}">
-  <link rel="stylesheet" href="{{asset('css/skin-black.css')}}">
-   <link rel="stylesheet" href="{{asset('css/fontawesome-iconpicker.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/AdminLTE.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/skin-black.css')}}">
+   <link rel="stylesheet" href="{{asset('public/css/fontawesome-iconpicker.min.css')}}">
   <!-- Select 2 -->
-  <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/select2.min.css')}}">
   <!-- DataTable -->
-  <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/datatables.min.css')}}">
 
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
@@ -34,7 +34,7 @@ $setting = App\Setting::first();
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-  <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/css/admin.css') }}">
 </head>
 <body class="hold-transition skin-black sidebar-mini">
 @if ($auth)
@@ -46,7 +46,8 @@ $setting = App\Setting::first();
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">
         @if ($setting)
-        <img src="{{asset('/images/logo/'.$setting->logo)}}" class="ad-logo img-responsive" alt="{{$setting->welcome_txt}}">
+        <!-- <img src="{{asset('public/images/logo/'.$setting->logo)}}" class="ad-logo img-responsive" alt="{{$setting->welcome_txt}}"> -->
+        <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="ad-logo img-responsive" alt="Brand"></a>
         @endif
       </span>
     </a>
@@ -70,7 +71,7 @@ $setting = App\Setting::first();
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Body -->
-              <li><a href="{{url('/admin/profile')}}" title="Profile">Profile</a></li>
+              <li><a href="{{url('public/admin/profile')}}" title="Profile">Profile</a></li>
               <li>
                 <a href="{{ route('logout') }}" title="Logout"
                     onclick="event.preventDefault();
@@ -213,18 +214,18 @@ $setting = App\Setting::first();
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jQuery 3 -->
 
-<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.min.js')}}"></script>
 
 <!-- Bootstrap 3.3.7 -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/js/bootstrap.min.js')}}"></script>
 <!-- DataTable -->
-<script src="{{asset('js/datatables.min.js')}}"></script>
+<script src="{{asset('public/js/datatables.min.js')}}"></script>
 <!-- Select2 -->
-<script src="{{asset('js/select2.full.min.js')}}"></script>
+<script src="{{asset('public/js/select2.full.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('js/adminlte.min.js')}}"></script>
+<script src="{{asset('public/js/adminlte.min.js')}}"></script>
 
-<script src="{{asset('js/fontawesome-iconpicker.min.js')}}"></script>
+<script src="{{asset('public/js/fontawesome-iconpicker.min.js')}}"></script>
 
 
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
