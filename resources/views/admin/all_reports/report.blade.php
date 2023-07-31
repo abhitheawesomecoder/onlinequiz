@@ -74,7 +74,7 @@
                   @endphp
                 @else
                   @php
-                   $mark = $mark - 5;
+                   $mark = $mark - 0.25;
                   @endphp
               @endif
                 @endif
