@@ -186,14 +186,15 @@ class UsersController extends Controller
       if (!empty($importedData) && isset($importedData[0]) && count($importedData[0]) > 0) {
           $importedStudents = 0; // Track the number of imported students
 
-          if((preg_match_all( "/[0-9]/", $row['adhaar_card_num'] ) == 12 )&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
-          {  $last4adhar = substr($row['adhaar_card_num'],-4);
-             $last4mobile = substr($row['mobile'],-4);
-             $password = $last4adhar.$last4mobile;
-          }else
-             $password = "password";
-
           foreach ($importedData[0] as $row) {
+
+              if((preg_match_all( "/[0-9]/", $row['adhaar_card_num'] ) == 12 )&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
+              {  $last4adhar = substr($row['adhaar_card_num'],-4);
+                 $last4mobile = substr($row['mobile'],-4);
+                 $password = $last4adhar.$last4mobile;
+              }else
+                 $password = "password";
+
               // Assuming the column headings in the Excel/CSV file match the field names in the database
               $studentData = [
                   'name' => $row['name'],
