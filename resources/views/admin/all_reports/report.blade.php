@@ -77,7 +77,6 @@
                    $mark = $mark - 0.25;
                   @endphp
               @endif
-                @endif
               @endforeach
               @php
                 $correct = $mark;
