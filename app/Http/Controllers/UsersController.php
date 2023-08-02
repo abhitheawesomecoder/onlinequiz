@@ -187,11 +187,15 @@ class UsersController extends Controller
           $importedStudents = 0; // Track the number of imported students
 
           foreach ($importedData[0] as $row) {
-
-              if((preg_match_all( "/[0-9]/", $row['adhaar_card_num'] ) == 12 )&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
-              {  $last4adhar = substr($row['adhaar_card_num'],-4);
-                 $last4mobile = substr($row['mobile'],-4);
-                 $password = $last4adhar.$last4mobile;
+              $name = $row['name'];
+              if((isset($name) && $name !== '')&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
+              {  $firstcharacterofname = strtolower(substr($name,1));
+                 if(preg_match("/^[a-zA-Z]$/", $firstcharacterofname)){
+                    $last4mobile = substr($row['mobile'],-4);
+                    $password = $firstcharacterofname.$last4mobile;
+                 }
+                 else
+                   $password = "password";
               }else
                  $password = "password";
 
