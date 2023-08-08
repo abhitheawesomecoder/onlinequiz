@@ -43,6 +43,7 @@
                     $correct = collect();
                   @endphp
                   @foreach ($answers as $answer)
+                  {{$mark}}
                     @if ($answer->user_id == $student->id && $answer->answer == $answer->user_answer)
                       @php
                        $mark = $mark + $topic->per_q_mark;
