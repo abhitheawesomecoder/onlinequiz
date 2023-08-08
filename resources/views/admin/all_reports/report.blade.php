@@ -70,12 +70,16 @@
               @foreach ($answers as $answer)
                 @if ($answer->answer == $answer->user_answer)
                   @php
-                  $mark++;
+                   $mark = $mark + $topic->per_q_mark;
                   @endphp
-                @endif
+                @else
+                  @php
+                   $mark = $mark - 0.50;
+                  @endphp
+              @endif
               @endforeach
               @php
-                $correct = $mark*$topic->per_q_mark;
+                $correct = $mark;
               @endphp
               {{$correct}}
             </td>

@@ -43,14 +43,20 @@
                     $correct = collect();
                   @endphp
                   @foreach ($answers as $answer)
-                    @if ($answer->user_id == $student->id && $answer->answer == $answer->user_answer)
-                      @php
-                       $mark++;
-                      @endphp
+                    @if ($answer->user_id == $student->id)
+                      @if ($answer->answer == $answer->user_answer)
+                        @php
+                        $mark = $mark + $topic->per_q_mark;
+                        @endphp
+                      @else
+                        @php
+                        $mark = $mark - 0.50;
+                        @endphp
+                      @endif
                     @endif
                   @endforeach
                   @php
-                    $correct = $mark*$topic->per_q_mark;
+                    $correct = $mark;
                   @endphp
                   {{$correct}}
                 </td>
