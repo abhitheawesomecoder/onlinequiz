@@ -126,6 +126,13 @@ class UsersController extends Controller
           $user->address = $request->address;
           $user->role = $request->role;
           $user->city = $request->city;
+          $user->class_teacher = $request->class_teacher;
+          $user->division = $request->division;
+          $user->fav_subject = $request->fav_subject;
+          $user->adhaar_card_num = $request->adhaar_card_num;
+          $user->school_name = $request->school_name;
+          $user->class_name = $request->class_name;
+          $user->schooler_ship = $request->schooler_ship;
 
           if($request->password !="")
           {
@@ -204,7 +211,9 @@ class UsersController extends Controller
               ];
               // dd($studentData);
               // Check if a student with the same email already exists in the database
-              $existingStudent = User::where('email', $studentData['email'])->first();
+              $existingStudent = User::where('email', $studentData['email'])
+              ->where('mobile', $studentData['mobile'])
+              ->first();
 
               if ($existingStudent) {
                   continue; // Skip the student as they already exist in the database
@@ -256,7 +265,8 @@ class UsersController extends Controller
     public function edit($id)
     {
       $user = User::find($id);
-      return view('admin.users.edit',compact('user'));
+      $selectedClass = $user->class_name; 
+      return view('admin.users.edit',compact('user', 'selectedClass'));
     }
 
     /**
@@ -285,6 +295,13 @@ class UsersController extends Controller
           $user->mobile = $request->mobile;
           $user->address = $request->address;
           $user->city = $request->city;
+          $user->class_teacher = $request->class_teacher;
+          $user->division = $request->division;
+          $user->fav_subject = $request->fav_subject;
+          $user->adhaar_card_num = $request->adhaar_card_num;
+          $user->school_name = $request->school_name;
+          $user->class_name = $request->class_name;
+          $user->schooler_ship = $request->schooler_ship;
 
           if($request->password !="")
           {

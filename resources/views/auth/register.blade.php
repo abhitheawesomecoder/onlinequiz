@@ -7,6 +7,25 @@
   .login-page .form {
     max-width: 1000px !important;
 }
+
+@media (min-width: 601px) and (max-width: 900px) {
+            .login-page {
+              width: 585px !important;
+            }
+            .login-page .form {
+              max-width: 500px !important;
+          }
+          }
+      
+            @media (max-width: 600px) {
+              .login-page {
+                    width: 585px !important;
+                  }
+                  .login-page .form {
+                    max-width: 500px !important;
+                  }
+              }
+
 </style>
 @section('head')
   <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">

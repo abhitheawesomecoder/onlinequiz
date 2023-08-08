@@ -48,8 +48,7 @@
                                  data-image="https://cybercollege.info/wp-content/uploads/2021/06/cropped-logo.png"
                                  data-prefill.name="name"
                                  data-prefill.email="email"
-                                 data-theme.color="#F37254"
-                                 data-prefill.return="/instruction">
+                                 data-theme.color="#F37254">
                               </script>
                            </form>
                         </div>
@@ -61,3 +60,41 @@
       </div>
    </body>
 </html>
+<script>
+
+$('body').on('click','#rzp-button1',function(e){
+    e.preventDefault();
+    var amount = $('.amount').val();
+    var total_amount = amount * 100;
+    var options = {
+        // ... your existing options ...
+
+        "handler": function (response){
+            // Set the value of the hidden input field
+            $('#razorpay_payment_id').val(response.razorpay_payment_id);
+
+            // ... your existing AJAX code ...
+        },
+        // ... rest of your options ...
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+});$('body').on('click','#rzp-button1',function(e){
+    e.preventDefault();
+    var amount = $('.amount').val();
+    var total_amount = amount * 100;
+    var options = {
+        // ... your existing options ...
+
+        "handler": function (response){
+            // Set the value of the hidden input field
+            $('#razorpay_payment_id').val(response.razorpay_payment_id);
+
+            // ... your existing AJAX code ...
+        },
+        // ... rest of your options ...
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+});
+</script>

@@ -13,12 +13,33 @@
     ]); ?>
   </script>
 
-  <style>
+
+<style>
     .video {
       height: 200px;
       border-radius: 30px;
       margin-left: 300px;
     }
+
+
+    @media (max-width: 600px) {
+              .video {
+                height: 109px;
+                  border-radius: 27px;
+                  margin-left: 47px;
+    
+               }
+
+              }
+            @media (max-width: 200px) {
+              .video {
+                height: 109px;
+                  border-radius: 27px;
+                  margin-left: 47px;
+    
+               }
+              }
+           
 
   </style>
    @endsection
@@ -31,7 +52,7 @@
           <div class="col-md-3">
           @if ($setting)
           <a href="{{ url('/') }}" title="{{$setting->welcome_txt}}">
-          <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
+          <img src="{{ asset('public/frontend/icon/logo_new.png')}}" style="display: none;" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
 
           </a>
         @endif

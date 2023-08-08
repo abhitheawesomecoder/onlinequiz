@@ -16,21 +16,14 @@
     <div class="logo-main-block">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-12">
           @if ($setting)
           <a href="{{ url('/') }}" title="{{$setting->welcome_txt}}">
           <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
           </a>
           @endif
           </div>
-          <div class="col-md-3">
           
-        
-        </div>
-          <div class="col-md-3">
-          <video class="video" id="preview"></video>  
-        
-        </div>
       </div>
       </div>
     </div>

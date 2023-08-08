@@ -23,7 +23,8 @@ class CreateQuestionsTable extends Migration
             $table->string('d');
             $table->string('answer');
             $table->text('code_snippet')->nullable();
-            $table->text('answer_exp')->nullable();         
+            $table->text('answer_exp')->nullable();    
+            $table->text('subject');
             $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

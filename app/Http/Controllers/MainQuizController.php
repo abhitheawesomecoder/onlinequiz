@@ -73,6 +73,7 @@ class MainQuizController extends Controller
                 $questions = $all_questions->diff($q_filter);
                 $questions = $questions->flatten();
                 $questions = $questions->shuffle();
+                $questions = $questions->random(50); 
                 return response()->json(["questions" => $questions, "auth"=>$auth, "topic" => $topic->id]);
             }
             $questions = collect();

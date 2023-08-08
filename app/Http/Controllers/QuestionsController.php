@@ -82,8 +82,8 @@ class QuestionsController extends Controller
 
                 // Check if the question already exists in the database based on the question text and topic_id
                 $existingQuestion = Question::where('question', $question['question'])
-                    ->where('topic_id', $question['topic_id'])
-                    ->first();
+                ->where('topic_id', $question['topic_id'])
+                ->first();
 
                 if ($existingQuestion) {
                     continue; // Skip the question as it is a duplicate

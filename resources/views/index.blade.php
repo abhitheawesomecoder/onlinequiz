@@ -77,6 +77,10 @@
             .manage_rows {
                 margin-bottom: 100px;
             }
+            .login {
+                display: none !important; /* Show the login on mobile screens */
+            }
+            
            
          @media (min-width: 601px) and (max-width: 900px) {
                 .text_size {
@@ -145,6 +149,9 @@
             .mobile_logo {
                 width: 70px;
                 height: 70px;
+            }
+            .login {
+                display: block !important; /* Show the login on mobile screens */
             }
                         }
            
@@ -216,6 +223,9 @@
                 width: 70px;
                 height: 70px;
             }
+            .login {
+                display: block !important; /* Show the login on mobile screens */
+            }
             }
         </style>
     </head>
@@ -269,6 +279,7 @@
                                 <li><a href="#our-volunteer">Our Volunteer</a></li>
                                 <li><a href="#what-people-say">What people say</a></li>
                                 <li> <a href="#contact-us">Contact Us</a></li>
+                                <li class="login"> <a href="{{url('/login')}}">Login</a></li>
                             </ul>
                             
                             <a href="{{url('/login')}}" class="default-btn">LOG IN</a>

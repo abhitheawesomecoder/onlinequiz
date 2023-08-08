@@ -5,7 +5,6 @@ use App\Topic;
 use App\Answer;
 use App\copyrighttext;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\GoogleTranslateController;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
 use App\Page;
@@ -43,8 +42,6 @@ Route::group(['middleware'=> 'coming_soon'], function(){
     return view('instruction');
 });
 
-Route::get('google/translate/change',[GoogleTranslateController::class,'googleTranslateChange'])->name('google.translate.change');
-
   /*facebook login route*/
   // Route::get('login/o_auth/facebook  ', 'Auth\LoginController@redirectToProvider');
   // Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
@@ -66,9 +63,10 @@ Route::get('google/translate/change',[GoogleTranslateController::class,'googleTr
   })->name('faq.get');
 
   Route::get('/home', function () {
+    $questions = Question::inRandomOrder()->limit(50)->get();
     return view('home', [
         'topics' => Topic::all(),
-        'questions' => Question::all(),
+        'questions' => $questions,
         'menus' => Page::where('show_in_menu', '=', 1)->get(),
     ]);
 });

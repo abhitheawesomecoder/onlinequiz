@@ -16,6 +16,34 @@
       margin-left: 300px;
     }
 
+
+    @media (min-width: 601px) and (max-width: 900px) {
+            .video {
+            height: 200px;
+            border-radius: 30px;
+            margin-left: 150px;
+            }
+          }
+      
+            @media (max-width: 600px) {
+              .video {
+                height: 109px;
+                  border-radius: 27px;
+                  margin-left: 47px;
+    
+               }
+
+              }
+            @media (max-width: 200px) {
+              .video {
+                height: 109px;
+                  border-radius: 27px;
+                  margin-left: 47px;
+    
+               }
+              }
+           
+
   </style>
 @endsection
 
@@ -27,7 +55,7 @@
           <div class="col-md-3">
           @if ($setting)
           <a href="{{ url('/') }}" title="{{$setting->welcome_txt}}">
-          <img src="{{ asset('public/frontend/icon/logo_new.png')}}" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
+          <img src="{{ asset('public/frontend/icon/logo_new.png')}}" style="display: none;" class="mobile_logo" width="100px" height="100px" alt="Brand"></a>
           </a>
           @endif
           </div>
@@ -183,7 +211,7 @@
                   @endif
 
                     @if($auth->topic()->where('topic_id', $topic->id)->exists())
-                      <a href="{{route('start_quiz', ['id' => $topic->id])}}" class="btn btn-block" title="Start Quiz">Start Quiz </a>
+                      <a href="{{route('start_quiz', ['id' => $topic->id])}}" class="btn btn-block" title="Start Quiz">Start Exam </a>
                     @else
                       {!! Form::open(['method' => 'POST', 'action' => 'PaypalController@paypal_post']) !!} 
                         {{ csrf_field() }}
@@ -193,7 +221,7 @@
                         <button type="submit" class="btn btn-default">Pay  <i class="{{$setting->currency_symbol}}"></i>{{$topic->amount}}</button>
                           @else 
 
-                          <a href="{{route('start_quiz', ['id' => $topic->id])}}" class="btn btn-block" title="Start Quiz">Start Quiz </a>
+                          <a href="{{route('start_quiz', ['id' => $topic->id])}}" style="background-color:black>" class="btn btn-block" title="Start Quiz">Start Exam </a>
 
                         @endif
 
