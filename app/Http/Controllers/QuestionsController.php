@@ -76,6 +76,7 @@ class QuestionsController extends Controller
                     'c' => $row['c'],
                     'd' => $row['d'],
                     'answer' => $row['answer'],
+                    'subject' => $row['subject'],
                     'code_snippet' => $row['code_snippet'] ?? null,
                     'answer_exp' => $row['answer_exp'] ?? null,
                 ];
@@ -86,6 +87,7 @@ class QuestionsController extends Controller
                 ->first();
 
                 if ($existingQuestion) {
+                    // dd('Found duplicate question: ' . $question['question']);
                     continue; // Skip the question as it is a duplicate
                 }
 
@@ -95,8 +97,7 @@ class QuestionsController extends Controller
                     Question::create($question);
                     $importedQuestions++;
                 } catch (\Exception $e) {
-                    // Log the error or handle it as needed
-                    // In this case, we'll just continue with the import process
+                    // dd('Error inserting question: ' . $e->getMessage());
                     continue;
                 }
             }

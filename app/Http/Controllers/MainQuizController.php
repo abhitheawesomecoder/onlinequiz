@@ -67,13 +67,68 @@ class MainQuizController extends Controller
                   $q_id = $answer->question_id;
                   $q_filter = $q_filter->push(Question::where('id', $q_id)->get());
                 }
-                $all_questions = $all_questions->push(Question::where('topic_id', $topic->id)->get());
-                $all_questions = $all_questions->flatten();
-                $q_filter = $q_filter->flatten();
-                $questions = $all_questions->diff($q_filter);
-                $questions = $questions->flatten();
-                $questions = $questions->shuffle();
-                $questions = $questions->random(50); 
+                // $all_questions = $all_questions->push(Question::where('topic_id', $topic->id)
+                // ->Where('subject', 'English')->random(3)
+                // ->get());
+                // $all_questions = $all_questions->flatten();
+                // $q_filter = $q_filter->flatten();
+                // $questions = $all_questions->diff($q_filter);
+                // $questions = $questions->flatten();
+                // $questions = $questions->shuffle();
+                // $questions = $questions->random(50); 
+
+                $answered_question_ids = Answer::where('user_id', $auth->id)->pluck('question_id')->all();
+
+        $history_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'History')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(5)
+            ->get();
+
+        $geography_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Geography')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(5)
+            ->get();
+
+        $science_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Science')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(5)
+            ->get();
+
+        $polity_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Polity')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(5)
+            ->get();
+
+        $gk_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'GK')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(10)
+            ->get();
+
+        $reasoning_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Reasoning')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(10)
+            ->get();
+        $maths_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Mathematics')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(10)
+            ->get();
+
+        $questions = $history_questions->concat($geography_questions)->concat($science_questions)->concat($polity_questions)->concat($gk_questions)->concat($reasoning_questions)->concat($maths_questions);
+
                 return response()->json(["questions" => $questions, "auth"=>$auth, "topic" => $topic->id]);
             }
             $questions = collect();

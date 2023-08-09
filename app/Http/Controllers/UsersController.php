@@ -228,6 +228,7 @@ class UsersController extends Controller
               ->first();
 
               if ($existingStudent) {
+                // dd('Found duplicate User: ' . $studentData['email']);
                   continue; // Skip the student as they already exist in the database
               }
 
@@ -239,6 +240,7 @@ class UsersController extends Controller
             } catch (\Exception $e) {
                 // Log the error or handle it as needed
                 // In this case, we'll just continue with the import process
+                // dd('Error inserting question: ' . $e->getMessage());
                 continue;
             }
           }

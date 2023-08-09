@@ -16,6 +16,7 @@ class Question extends Model
       'e',
       'f',
       'answer',
+      'subject',
       'code_snippet',
       'answer_exp',
       'question_img',
