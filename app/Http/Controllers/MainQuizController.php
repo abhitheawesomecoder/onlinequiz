@@ -141,7 +141,7 @@ class MainQuizController extends Controller
             ->take(10)
             ->get();
 
-        $questions = $history_questions->concat($geography_questions)->concat($science_questions)->concat($polity_questions)->concat($gk1_questions)->concat($gk2_questions)->concat($reasoning_questions)->concat($maths_questions)->concat($civics_questions);
+        $questions = $history_questions->concat($geography_questions)->concat($science_questions)->concat($gk1_questions)->concat($gk2_questions)->concat($reasoning_questions)->concat($maths_questions)->concat($civics_questions);
 
                 return response()->json(["questions" => $questions, "auth"=>$auth, "topic" => $topic->id]);
             }
