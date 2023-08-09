@@ -87,7 +87,7 @@ class QuestionsController extends Controller
                 ->first();
 
                 if ($existingQuestion) {
-                    // dd('Found duplicate question: ' . $question['question']);
+                     dd('Found duplicate question: ' . $question['question']);
                     continue; // Skip the question as it is a duplicate
                 }
 
@@ -97,7 +97,7 @@ class QuestionsController extends Controller
                     Question::create($question);
                     $importedQuestions++;
                 } catch (\Exception $e) {
-                    // dd('Error inserting question: ' . $e->getMessage());
+                     dd('Error inserting question: ' . $e->getMessage());
                     continue;
                 }
             }
