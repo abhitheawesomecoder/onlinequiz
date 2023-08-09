@@ -91,7 +91,7 @@ class MainQuizController extends Controller
             ->whereNotIn('id', $answered_question_ids)
             ->inRandomOrder()
             ->take(5)
-            ->get();
+            ->get(); 
 
         $science_questions = Question::where('topic_id', $topic->id)
             ->where('subject', 'Science')
@@ -100,15 +100,22 @@ class MainQuizController extends Controller
             ->take(5)
             ->get();
 
-        $polity_questions = Question::where('topic_id', $topic->id)
-            ->where('subject', 'Polity')
+        // $polity_questions = Question::where('topic_id', $topic->id)
+        //     ->where('subject', 'Polity')
+        //     ->whereNotIn('id', $answered_question_ids)
+        //     ->inRandomOrder()
+        //     ->take(5)
+        //     ->get();
+
+        $gk1_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Gk1')
             ->whereNotIn('id', $answered_question_ids)
             ->inRandomOrder()
-            ->take(5)
+            ->take(10)
             ->get();
 
-        $gk_questions = Question::where('topic_id', $topic->id)
-            ->where('subject', 'GK')
+        $gk2_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Gk2')
             ->whereNotIn('id', $answered_question_ids)
             ->inRandomOrder()
             ->take(10)
@@ -127,7 +134,14 @@ class MainQuizController extends Controller
             ->take(10)
             ->get();
 
-        $questions = $history_questions->concat($geography_questions)->concat($science_questions)->concat($polity_questions)->concat($gk_questions)->concat($reasoning_questions)->concat($maths_questions);
+        $civics_questions = Question::where('topic_id', $topic->id)
+            ->where('subject', 'Civics')
+            ->whereNotIn('id', $answered_question_ids)
+            ->inRandomOrder()
+            ->take(10)
+            ->get();
+
+        $questions = $history_questions->concat($geography_questions)->concat($science_questions)->concat($polity_questions)->concat($gk1_questions)->concat($gk2_questions)->concat($reasoning_questions)->concat($maths_questions)->concat($civics_questions);
 
                 return response()->json(["questions" => $questions, "auth"=>$auth, "topic" => $topic->id]);
             }
