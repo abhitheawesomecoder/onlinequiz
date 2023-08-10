@@ -20,8 +20,7 @@ class Question extends Model
       'code_snippet',
       'answer_exp',
       'question_img',
-      'question_video_link',
-      'question_audio'
+      'question_video_link'
     ];
 
     public function answers() {
