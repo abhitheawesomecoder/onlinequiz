@@ -35,7 +35,8 @@
                 <td>{{$student->mobile ? $student->mobile : '-'}}</td>               
                 <td>{{$topic->title}}</td>
                 <td>
-                  {{$c_que*$topic->per_q_mark}}
+                  {{50*$topic->per_q_mark}}
+                  {{--$c_que*$topic->per_q_mark--}}
                 </td>
                 <td>
                   @php

@@ -45,7 +45,7 @@
                     {{$topic->per_q_mark*$qu_count}}
                   </li>
                   <li>
-                    {{$qu_count}}
+                    {{50}}{{--$qu_count--}}
                   </li>
                   <li>
                     {{$topic->timer}} minutes

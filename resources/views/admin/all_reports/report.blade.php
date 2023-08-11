@@ -61,7 +61,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{$count_questions}}</td>
+            <td>{{50}}{{--$count_questions--}}</td>
             <td>
               @php
                 $mark = 0;
