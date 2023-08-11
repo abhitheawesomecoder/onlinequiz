@@ -163,15 +163,16 @@
                           <li>{{$topic->per_q_mark}}</li>
                           <li>
                             @php
-                                $qu_count = 0;
+                                //$qu_count = 0;
+                                $qu_count = 50;
                             @endphp
-                            @foreach($questions as $question)
+                         {{--   @foreach($questions as $question)
                               @if($question->topic_id == $topic->id)
                                 @php 
                                   $qu_count++;
                                 @endphp
                               @endif
-                            @endforeach
+                            @endforeach --}}
                             {{$topic->per_q_mark*$qu_count}}
                           </li>
                           <li>
