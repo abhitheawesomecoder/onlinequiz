@@ -68,8 +68,8 @@
                 $correct = collect();
               @endphp
               @foreach ($answers as $answer)
+              {{$mark}}
                 @if ($answer->answer == $answer->user_answer)
-                {{$mark}}
                   @php
                    $mark = $mark + $topic->per_q_mark;
                   @endphp
