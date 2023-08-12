@@ -68,12 +68,11 @@
                 $correct = collect();
               @endphp
               @foreach ($answers as $answer)
-              {{$mark}}
                 @if ($answer->answer == $answer->user_answer)
                   @php
                    $mark = $mark + $topic->per_q_mark;
                   @endphp
-                @else
+                @elseif(($answer->answer != $answer->user_answer)&&($answer->user_answer != 0))
                   @php
                    $mark = $mark - 0.50;
                   @endphp
