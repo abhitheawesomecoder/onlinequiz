@@ -46,6 +46,7 @@
                   @foreach ($answers as $answer)
                     @if ($answer->user_id == $student->id)
                       @if ($answer->answer == $answer->user_answer)
+                      {{$mark}}
                         @php
                         $mark = $mark + $topic->per_q_mark;
                         @endphp
