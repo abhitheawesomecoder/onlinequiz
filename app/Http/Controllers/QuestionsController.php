@@ -79,6 +79,7 @@ class QuestionsController extends Controller
                     'subject' => $row['subject'],
                     'code_snippet' => $row['code_snippet'] ?? null,
                     'answer_exp' => $row['answer_exp'] ?? null,
+                    'question_img' => $row['question_img'] ?? null,
                 ];
 
                 // Check if the question already exists in the database based on the question text and topic_id
