@@ -119,7 +119,7 @@ class MainQuizController extends Controller
                     ->get();
 
                 $questions = $history_questions->concat($geography_questions)->concat($science_questions)->concat($gk1_questions)->concat($gk2_questions)->concat($reasoning_questions)->concat($maths_questions)->concat($civics_questions);
-
+                $questions->inRandomOrder();
                 return response()->json(["questions" => $questions, "auth"=>$auth, "topic" => $topic->id]);
 
           }
