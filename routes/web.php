@@ -69,8 +69,8 @@ Route::group(['middleware'=> 'coming_soon'], function(){
         'questions' => $questions,
         'menus' => Page::where('show_in_menu', '=', 1)->get(),
     ]);
-});
- //})->middleware(CheckLoginTime::class);
+//});
+ })->middleware(CheckLoginTime::class);
 
   Route::get('/redirect', function () {
       $query = http_build_query([
