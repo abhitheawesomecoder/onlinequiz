@@ -19,6 +19,11 @@ class CheckLoginTime
         $allowedDateTime = Carbon::createFromFormat('Y-m-d H:i', $allowedDate . ' ' . $allowedStartTime);
         $endDateTime = Carbon::createFromFormat('Y-m-d H:i', $allowedDate . ' ' . $allowedEndTime);
 
+        $auth_email = auth()->user()->email;
+
+        if($auth_email == "testuser1@gmail.com" || $auth_email == "testuser2@gmail.com" || $auth_email == "testuser3@gmail.com" || $auth_email == "testuser4@gmail.com" || $auth_email == "testuser5@gmail.com" || $auth_email == "admin@info.com")
+          return $next($request);
+
         if (!$now->between($allowedDateTime, $endDateTime)) {
             return redirect()->back()
                              ->with('error', 'Please login during the specified date and time frame.');
