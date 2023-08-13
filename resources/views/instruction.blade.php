@@ -87,9 +87,9 @@
 @section('content')
 @if($auth)
 <div class="container">
-@if(session('error'))
+@if(session('error') && session('error') == 'Please login during the specified date and time frame.')
     <div class="alert alert-danger">
-        {{-- session('error') --}}
+        {{ session('error') }}
     </div>
 @endif
 
