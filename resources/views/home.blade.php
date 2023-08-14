@@ -151,11 +151,11 @@
                     <div class="row">
                       <div class="col-xs-6 pad-0">
                         <ul class="topic-detail">
-                          <li>Per Question Mark <i class="fa fa-long-arrow-right"></i></li>
+                          <li>Right Answer Mark<i class="fa fa-long-arrow-right"></i></li>
                           <li>Total Marks <i class="fa fa-long-arrow-right"></i></li>
                           <li>Total Questions <i class="fa fa-long-arrow-right"></i></li>
                           <li>Total Time <i class="fa fa-long-arrow-right"></i></li>
-                          <li>Quiz Price <i class="fa fa-long-arrow-right"></i></li>
+                          <li>Wrong Answer Mark<i class="fa fa-long-arrow-right"></i></li>
                         </ul>
                       </div>
                       <div class="col-xs-6">
@@ -186,7 +186,7 @@
                             @if(!empty($topic->amount))
                             {{-- <i class="{{$setting->currency_symbol}}"></i> {{$topic->amount}}   --}}
                              @else
-                               Free
+                               -0.50
                             @endif
                           </li>
                         </ul>

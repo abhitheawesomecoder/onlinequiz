@@ -210,7 +210,7 @@
           </p>
       </div>
       <div class="col-md-12" style="text-align: center;">
-        <a  href="{{url('/home')}}" style="background-color: #AA2672; border-color:#AA2672" class="btn btn-primary" data-wow-delay="0.8s">Start Quiz</a>
+        <a  href="{{url('/home')}}" style="background-color: #AA2672; border-color:#AA2672" class="btn btn-primary" data-wow-delay="0.8s">Start Exam</a>
       </div>
     </div>
 
