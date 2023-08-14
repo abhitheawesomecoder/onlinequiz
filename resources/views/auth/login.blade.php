@@ -100,9 +100,9 @@
             </p>
           </div>
 
-          <div class="form-group text-center">
+          <!-- <div class="form-group text-center">
             <a href="{{url('/password/reset')}}" title="Forgot Password">Forgot Password?</a>
-          </div>
+          </div> -->
         </form>
       </div>
     </div>

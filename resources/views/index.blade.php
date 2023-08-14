@@ -452,7 +452,7 @@
         <section class="causes-section bg-grey bd-bottom padding" style="background-color: white;">
             <div class="container">
                 <div class="section-heading text-center mb-40">
-                    <h2>OUR PROGRAMERS</h2>
+                    <h2>OUR PROGRAMS</h2>
                     <span class="heading-border"></span>
                     <br>
                     <br>
@@ -466,7 +466,7 @@
                                 <div class="col-9">
                                     <div class="row">
                                         <div class="col-12 headings">
-                                            <h2 class="education education_mob">EDUCATIONS</h2 > 
+                                            <h2 class="education education_mob">EDUCATION</h2 > 
                                         </div>
                                         <br>
                                         <br>
@@ -927,7 +927,7 @@
                             <ul class="address">
                                 <li><i class="ti-email"></i> jisarfoundation@gmail.com</li>
                                 <li><i class="ti-mobile"></i> +917972811009</li>
-                                <li><i class="ti-world"></i> www.Jisar.in </li>
+                                <li><i class="ti-world"></i><a href="https://jisar.in">www.Jisar.in</a></li>
                                 <li><i class="ti-location-pin"></i> Indiranagar, Nashik, Mh India 422009</li>
                             </ul>
                         </div>
