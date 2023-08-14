@@ -9,7 +9,7 @@
 		<meta name="description" content="">
         <meta name="author" content="DynamicLayers">
        
-        <title>Charitify || NGO/Charity/Fundraising Template</title>
+        <title>Jisar Foundation</title>
         
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 

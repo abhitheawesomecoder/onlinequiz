@@ -9,7 +9,7 @@
 		<meta name="description" content="">
         <meta name="author" content="DynamicLayers">
        
-        <title>Charitify || NGO/Charity/Fundraising Template</title>
+        <title>Jisar Foundation</title>
         
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
@@ -251,10 +251,9 @@
                         </div>
                         <div class="col-sm-4 d-none d-md-block">
                             <ul class="right-info">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100095433754056&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="https://instagram.com/jisar_foundation?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
@@ -307,7 +306,7 @@
                                <div class="slider-text">
                                    <h5 class="wow cssanimation fadeInBottom"></h5>
                                    <h1 class="wow cssanimation leFadeInRight sequence">Dr APJ. Abdul Kalam Talent Search Examination 2023.</h1>
-                                    <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Maharashtra’s biggest online scholarship fest for 3rd to 10th std students.<br> Register now to win scholarship and exciting awards!</p>
+                                    <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Maharashtra’s biggest online scholarship fest for 3rd to 10th std students.<br> For Registered users password will be first letter of your name in small and last 4 digits of your phone number.</p>
                                     <a href="{{url('/drapjkalam')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register Now</a>
                                     <a href="{{url('.logins')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Login</a>
                                 </div>
@@ -323,7 +322,7 @@
                                     <h1 class="wow cssanimation fadeInTop" data-wow-delay="1s" data-wow-duration="800ms">Together we  <br>can make a Difference</h1>
                                     <p class="wow cssanimation fadeInBottom" data-wow-delay="1s">Help today because tomorrow you may be the one who needs helping! <br>Forget what you can get and see what you can give.</p>
                                     <a href="#our-volunteer" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
-                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donet Now</a>
+                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donate Now</a>
                                 </div>
                            </div>
                         </div>
@@ -338,7 +337,7 @@
                                     <h1 class="wow cssanimation lePushReleaseFrom sequence" data-wow-delay="1s">Give a little. Change a lot.</h1>
                                     <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Help today because tomorrow you may be the one who needs helping! <br>Forget what you can get and see what you can give.</p>
                                     <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Join With Us</a>
-                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donet Now</a>
+                                    <a href="#" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Donate Now</a>
                                 </div>
                            </div>
                         </div>
@@ -598,7 +597,7 @@
                                 <h3><i class="ti-bar-chart"></i>Goal: $450000</h3>
                                 <h3><i class="ti-thumb-up"></i>Raised: $55000</h3>
                             </div> -->
-                            <a href="{{ url('drapjkalam') }}" class="default-btn">Registrt Now</a>x
+                            <a href="{{ url('drapjkalam') }}" class="default-btn">Register Now</a>x
                         </div>
                     </div>
                     <!-- <div class="col-md-6 xs-padding">
@@ -650,7 +649,7 @@
                             </div><!-- /Team-3 -->
                             <div class="col-md-6">
                                 <div class="team-details">
-                                   <img src="{{ asset('public/frontend/icon/Krishna.jpg')}}" alt="team">
+                                   <img src="{{ asset('public/frontend/icon/krishna.jpg')}}" alt="team">
                                     <div class="hover">
                                         <h3>Mr.Krishna Kushare<span>Internet Specialist</span></h3>
                                     </div>
@@ -904,10 +903,9 @@
                             
                             <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor</p>
                             <ul class="social-icon">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100095433754056&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://instagram.com/jisar_foundation?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
