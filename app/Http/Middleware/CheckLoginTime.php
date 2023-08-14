@@ -21,7 +21,7 @@ class CheckLoginTime
 
         $auth_email = auth()->user()->email;
 
-        if($auth_email == "testuser1@gmail.com" || $auth_email == "testuser2@gmail.com" || $auth_email == "testuser3@gmail.com" || $auth_email == "testuser4@gmail.com" || $auth_email == "testuser5@gmail.com" || $auth_email == "admin@info.com")
+        if(str_contains($auth_email, 'testuser') || $auth_email == "admin@info.com")
           return $next($request);
 
         if (!$now->between($allowedDateTime, $endDateTime)) {

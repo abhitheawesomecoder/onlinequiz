@@ -142,7 +142,7 @@
         <small class="text-danger">{{ $errors->first('class_name') }}</small>
     </div>
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-          {!! Form::label('name', 'Schoolership Exam Given Before') !!}
+          {!! Form::label('name', 'Scholarship Exam Given Before') !!}
           <span style="color: red;">*</span>
           <select class="form-control" name="schooler_ship" required>
          
