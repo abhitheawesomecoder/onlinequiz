@@ -13,19 +13,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $users = User::all();
-        foreach($users as $user){
-            if($user->name != "Admin"){
-                
-                $password = bcrypt( strtolower( substr($user->name, 0, 1)).substr($user->mobile,-4));
+        // $users = User::all();
+        // foreach($users as $user){
+        //     if($user->name != "Admin"){
 
-                $user->password = $password;
+        //         $password = bcrypt( strtolower( substr($user->name, 0, 1)).substr($user->mobile,-4));
 
-                $user->save();
-            }
-        }
+        //         $user->password = $password;
 
-        
+        //         $user->save();
+        //     }
+        // }
 
         // $password = bcrypt( strtolower( substr($user->name, 0, 1)).substr($user->mobile,-4));
 
