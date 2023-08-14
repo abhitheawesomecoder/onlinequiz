@@ -8583,9 +8583,9 @@ button.btn-wave {
   margin-bottom: 15px;
 }
 
-.myQuestion span:nth-child(odd) {
+/* .myQuestion span:nth-child(odd) {
   color: black;
-}
+} */
 
 .myQuestion span {
   font-size: 16px;

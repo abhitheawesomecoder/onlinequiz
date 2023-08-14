@@ -10,7 +10,7 @@ class CheckLoginTime
 {
     public function handle($request, Closure $next)
     {
-        $allowedDate = '2023-07-31';   // Set the allowed date in 'Y-m-d' format (e.g., '2023-08-01' for August 1, 2023)
+        $allowedDate = '2023-08-15';   // Set the allowed date in 'Y-m-d' format (e.g., '2023-08-01' for August 1, 2023)
         $allowedStartTime = '13:00';      // Set the start time in 24-hour format (e.g., '02:30' for 2:30 AM)
         $allowedEndTime = '24:00';     // Set the end time in 24-hour format (e.g., '18:00' for 6:00 PM)
 
@@ -18,6 +18,11 @@ class CheckLoginTime
         // dd($now);
         $allowedDateTime = Carbon::createFromFormat('Y-m-d H:i', $allowedDate . ' ' . $allowedStartTime);
         $endDateTime = Carbon::createFromFormat('Y-m-d H:i', $allowedDate . ' ' . $allowedEndTime);
+
+        $auth_email = auth()->user()->email;
+
+        if($auth_email == "testuser1@gmail.com" || $auth_email == "testuser2@gmail.com" || $auth_email == "testuser3@gmail.com" || $auth_email == "testuser4@gmail.com" || $auth_email == "testuser5@gmail.com" || $auth_email == "admin@info.com")
+          return $next($request);
 
         if (!$now->between($allowedDateTime, $endDateTime)) {
             return redirect()->back()
