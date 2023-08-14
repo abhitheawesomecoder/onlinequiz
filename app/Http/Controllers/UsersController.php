@@ -196,7 +196,7 @@ class UsersController extends Controller
           foreach ($importedData[0] as $row) {
               $name = $row['name'];
               if((isset($name) && $name !== '')&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
-              {  $firstcharacterofname = strtolower(substr($name,1));
+              {  $firstcharacterofname = strtolower(substr($name,0,1));
                  if(preg_match("/^[a-zA-Z]$/", $firstcharacterofname)){
                     $last4mobile = substr($row['mobile'],-4);
                     $password = $firstcharacterofname.$last4mobile;
@@ -209,17 +209,17 @@ class UsersController extends Controller
               // Assuming the column headings in the Excel/CSV file match the field names in the database
               $studentData = [
                   'name' => $row['name'],
-                  'email' => $row['email'],
+                  'email' => $row['email'] ?? "dummyemail".$row['row_id']."@gmail.com", 
                   'password' => bcrypt($password), // Make sure the passwords are hashed
                   'mobile' => $row['mobile'],
                   'role' => 'S',
-                  'class_name' => $row['class_name'],
-                  'school_name' => $row['school_name'],
-                  'division' => $row['division'],
-                  'adhaar_card_num' => $row['adhaar_card_num'],
-                  'class_teacher' => $row['class_teacher'],
-                  'fav_subject' => $row['fav_subject'],
-                  'schooler_ship' => $row['schooler_ship'],
+                  'class_name' => $row['class_name']." Class",
+                  'school_name' => $row['school_name'] ?? null,
+                  'division' => $row['division'] ?? null,
+                  'adhaar_card_num' => $row['adhaar_card_num'] ?? null,
+                  'class_teacher' => $row['class_teacher'] ?? null,
+                  'fav_subject' => $row['fav_subject'] ?? null,
+                  'schooler_ship' => $row['schooler_ship'] ?? null
               ];
               // dd($studentData);
               // Check if a student with the same email already exists in the database
