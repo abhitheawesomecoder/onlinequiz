@@ -212,7 +212,7 @@
                   @endif
 
                     @if($auth->topic()->where('topic_id', $topic->id)->exists())
-                      <a href="{{route('start_quiz', ['id' => $topic->id])}}" class="btn btn-block" title="Start Quiz">Start Exam </a>
+                      <a href="{{route('start_quiz', ['id' => $topic->id])}}" class="btn btn-wave" title="Start Quiz">Start Exam </a>
                     @else
                       {!! Form::open(['method' => 'POST', 'action' => 'PaypalController@paypal_post']) !!} 
                         {{ csrf_field() }}
