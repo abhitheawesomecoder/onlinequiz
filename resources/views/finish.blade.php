@@ -85,9 +85,7 @@
 
 
 
-          <div class="question-block">
-            <!-- <h2 class="text-center main-block-heading">{{$topic->title}} Result</h2> -->
-           
+          <div class="question-block">         
             <h2 class="text-center">Thanks your exam has been submitted. You results will be revealed in 30-45 day.</h2>
           </div>
         </div>
