@@ -226,4 +226,3 @@ Route::group(['middleware'=> 'isadmin'], function(){
   Route::post('admin/mail-settings', 'Configcontroller@changeMailEnvKeys')->name('mail.update');
 
 });
-Auth::routes(['register' => false]);
