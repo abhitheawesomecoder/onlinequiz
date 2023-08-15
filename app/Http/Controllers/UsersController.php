@@ -194,24 +194,24 @@ class UsersController extends Controller
           $importedStudents = 0; // Track the number of imported students
 
           foreach ($importedData[0] as $row) {
-              $name = $row['name'];
-              if((isset($name) && $name !== '')&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
-              {  $firstcharacterofname = strtolower(substr($name,0,1));
-                 if(preg_match("/^[a-zA-Z]$/", $firstcharacterofname)){
-                    $last4mobile = substr($row['mobile'],-4);
-                    $password = $firstcharacterofname.$last4mobile;
-                 }
-                 else
-                   $password = "password";
-              }else
-                 $password = "password";
+              // $name = $row['name'];
+              // if((isset($name) && $name !== '')&&(preg_match_all( "/[0-9]/", $row['mobile'] ) == 10 ))
+              // {  $firstcharacterofname = strtolower(substr($name,0,1));
+              //    if(preg_match("/^[a-zA-Z]$/", $firstcharacterofname)){
+              //       $last4mobile = substr($row['mobile'],-4);
+              //       $password = $firstcharacterofname.$last4mobile;
+              //    }
+              //    else
+              //      $password = "password";
+              // }else
+              //    $password = "password";
 
               // Assuming the column headings in the Excel/CSV file match the field names in the database
               $studentData = [
                   'name' => $row['name'],
-                  'email' => $row['email'] ?? "dummyemail".$row['row_id']."@gmail.com", 
-                  'password' => bcrypt($password), // Make sure the passwords are hashed
-                  'mobile' => $row['mobile'],
+                  'email' => $row['r_email'], 
+                  'password' => bcrypt($row['password']), // Make sure the passwords are hashed
+                  'mobile' => $row['r_mobile'],
                   'role' => 'S',
                   'class_name' => $row['class_name']." Class",
                   'school_name' => $row['school_name'] ?? null,
