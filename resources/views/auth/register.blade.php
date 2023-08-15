@@ -62,12 +62,12 @@
           <small class="text-danger">{{ $errors->first('name') }}</small>
         </div>
 
-        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+        <!-- <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
           {!! Form::label('email', 'Email address') !!}
           <span style="color: red;">*</span>
           {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'eg: foo@bar.com']) !!}
           <small class="text-danger">{{ $errors->first('email') }}</small>
-        </div>
+        </div> -->
 
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
           {!! Form::label('password', 'Password') !!}
@@ -76,18 +76,19 @@
           <small class="text-danger" style="color: red; background-color: #FFF;">{{ $errors->first('password') }}</small>
         </div>
         
-        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+        
+        <!-- <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
           {!! Form::label('password_confirmation', 'Confirm Password') !!}
           <span style="color: red;">*</span>
           {!! Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required', 'placeholder'=>'Confirm Password']) !!}
           <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
-        </div>
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        </div> -->
+        <!-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Class Teacher Name') !!}
           <span style="color: red;">*</span>
           {!! Form::text('class_teacher', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter Class Teacher Name']) !!}
           <small class="text-danger">{{ $errors->first('class_teacher') }}</small>
-        </div>
+        </div> -->
 
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Division') !!}
@@ -96,12 +97,12 @@
           <small class="text-danger">{{ $errors->first('division') }}</small>
         </div>
 
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <!-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Fav Subject') !!}
           <span style="color: red;">*</span>
           {!! Form::text('fav_subject', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Fav Subject']) !!}
           <small class="text-danger">{{ $errors->first('fav_subject') }}</small>
-        </div>
+        </div> -->
         
     </div>
     <div class="col-md-6">
@@ -111,12 +112,12 @@
           {!! Form::number('mobile', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter your Mobile Number', 'min' => '1000000000', 'max' => '9999999999']) !!}
           <small class="text-danger">{{ $errors->first('mobile') }}</small>
         </div>
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <!-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'Adhar Card Number') !!}
         
           {!! Form::number('adhaar_card_num', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Enter your Adhar Card Number', 'min' => '100000000000', 'max' => '999999999999']) !!}
           <small class="text-danger">{{ $errors->first('adhaar_card_num') }}</small>
-        </div>
+        </div> -->
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
           {!! Form::label('name', 'School Name') !!}
           <span style="color: red;">*</span>
@@ -141,8 +142,8 @@
         </select>
         <small class="text-danger">{{ $errors->first('class_name') }}</small>
     </div>
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-          {!! Form::label('name', 'Scholarship Exam Given Before') !!}
+        <!-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+          {!! Form::label('name', 'Schoolership Exam Given Before') !!}
           <span style="color: red;">*</span>
           <select class="form-control" name="schooler_ship" required>
          
@@ -151,7 +152,7 @@
            
         </select>
           <small class="text-danger">{{ $errors->first('schooler_ship') }}</small>
-        </div>
+        </div> -->
   </div>
   </div>
         <div class="mr-t-20">

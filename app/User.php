@@ -17,23 +17,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 
-        'email', 
         'password', 
         'mobile', 
-        'mobile_2', 
-        'school', 
-        'address', 
-        'city', 
-        'percent_10', 
-        'percent_11', 
+        'school',
         'role',
         'class_name',
         'school_name',
-        'adhaar_card_num',
-        'class_teacher',
         'division',
-        'fav_subject',
-        'schooler_ship',
     ];
 
     /**
@@ -42,8 +32,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 
-        'remember_token',
+        'password', 'remember_token',
     ];
 
     public function findByMobileNumber($mobileNumber)
