@@ -307,7 +307,7 @@
                                    <h5 class="wow cssanimation fadeInBottom"></h5>
                                    <h1 class="wow cssanimation leFadeInRight sequence">Dr APJ. Abdul Kalam Talent Search Examination 2023.</h1>
                                     <p class="wow cssanimation fadeInTop" data-wow-delay="1s">Maharashtra’s biggest online scholarship fest for 3rd to 10th std students.<br> For Registered users password will be first letter of your name in small and last 4 digits of your phone number.</p>
-                                    <a href="{{url('/drapjkalam')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register Now</a>
+                                    <a href="{{url('/register')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Register Now</a>
                                     <a href="{{url('.logins')}}" class="default-btn wow cssanimation fadeInBottom" data-wow-delay="0.8s">Login</a>
                                 </div>
                            </div>
@@ -597,7 +597,7 @@
                                 <h3><i class="ti-bar-chart"></i>Goal: $450000</h3>
                                 <h3><i class="ti-thumb-up"></i>Raised: $55000</h3>
                             </div> -->
-                            <a href="{{ url('drapjkalam') }}" class="default-btn">Register Now</a>x
+                            <a href="{{ url('register') }}" class="default-btn">Register Now</a>x
                         </div>
                     </div>
                     <!-- <div class="col-md-6 xs-padding">
