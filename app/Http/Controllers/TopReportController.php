@@ -21,7 +21,8 @@ class TopReportController extends Controller
      {
          $topics = Topic::all();
          $questions = Question::all();
-         return view('admin.top_reports.index', compact('questions', 'topics'));
+         $total_students_gave_exam = Answer::distinct('user_id')->count();
+         return view('admin.top_reports.index', compact('questions', 'topics','total_students_gave_exam'));
      }
 
     /**
@@ -52,10 +53,10 @@ class TopReportController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function show($id)
-     {
+     {  
         $filtStudents = DB::select("SELECT users.*, (positive_count - IFNULL(negative_count,0)) as score
-                              FROM (SELECT user_id, count(`user_answer`)*2 as positive_count FROM `answers` WHERE `user_answer` = `answer` GROUP BY `user_id`) AS pos
-                              LEFT JOIN (SELECT user_id, count(`user_answer`)*0.50 as negative_count FROM `answers` WHERE `user_answer` <> '0' AND `user_answer` <> `answer`  GROUP BY `user_id`) as neg
+                              FROM (SELECT user_id, count(`user_answer`)*2 as positive_count FROM `answers` WHERE `user_answer` = `answer` AND `topic_id` = ".$id." GROUP BY `user_id`) AS pos
+                              LEFT JOIN (SELECT user_id, count(`user_answer`)*0.50 as negative_count FROM `answers` WHERE `user_answer` <> '0' AND `user_answer` <> `answer` AND `topic_id` = ".$id."  GROUP BY `user_id`) as neg
                               ON pos.user_id = neg.user_id 
                               left join users on users.id = pos.user_id
                               ORDER BY score DESC");

@@ -10,6 +10,7 @@
 ])
 
 @section('content')
+<h4>Total no. of students gave exam : <b>{{$total_students_gave_exam}}</b></h4>
   <div class="row">
     @if ($topics)
       @foreach ($topics as $key => $topic)
