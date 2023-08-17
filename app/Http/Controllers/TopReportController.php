@@ -8,6 +8,7 @@ use App\User;
 use App\Topic;
 use App\Answer;
 use App\Question;
+use Illuminate\Support\Facades\DB;
 
 class TopReportController extends Controller
 {
@@ -52,24 +53,31 @@ class TopReportController extends Controller
      */
      public function show($id)
      {
+        $filtStudents = DB::select("SELECT users.*, (positive_count - IFNULL(negative_count,0)) as score
+                              FROM (SELECT user_id, count(`user_answer`)*2 as positive_count FROM `answers` WHERE `user_answer` = `answer` GROUP BY `user_id`) AS pos
+                              LEFT JOIN (SELECT user_id, count(`user_answer`)*0.50 as negative_count FROM `answers` WHERE `user_answer` <> '0' AND `user_answer` <> `answer`  GROUP BY `user_id`) as neg
+                              ON pos.user_id = neg.user_id 
+                              left join users on users.id = pos.user_id
+                              ORDER BY score DESC");
+         //dd($result);
          $topic = Topic::findOrFail($id);
-         $answers = Answer::where('topic_id', $topic->id)->get();
-         $students = User::where('id', '!=', Auth::id())->get();
-         $c_que = Question::where('topic_id', $id)->count();
+        //  $answers = Answer::where('topic_id', $topic->id)->get();
+        //  $students = User::where('id', '!=', Auth::id())->get();
+        //  $c_que = Question::where('topic_id', $id)->count();
 
-         $filtStudents = collect();
-         foreach ($students as $student) {
-           foreach ($answers as $answer) {
-             if ($answer->user_id == $student->id) {
-               $filtStudents->push($student);
-             }
-           }
-         }
+        //  $filtStudents = collect();
+        //  foreach ($students as $student) {
+        //    foreach ($answers as $answer) {
+        //      if ($answer->user_id == $student->id) {
+        //        $filtStudents->push($student);
+        //      }
+        //    }
+        //  }
 
-         $filtStudents = $filtStudents->unique();
-         $filtStudents = $filtStudents->flatten();
+        //  $filtStudents = $filtStudents->unique();
+        //  $filtStudents = $filtStudents->flatten();
 
-         return view('admin.top_reports.show', compact('filtStudents', 'answers', 'c_que', 'topic'));
+         return view('admin.top_reports.show', compact('filtStudents','topic'));
      }
 
     /**

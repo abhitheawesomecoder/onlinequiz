@@ -25,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          @if ($answers)
+         
             @foreach ($filtStudents as $key => $student)
               <tr>
                 <td>
@@ -35,29 +35,15 @@
                 <td>{{$student->mobile ? $student->mobile : '-'}}</td>               
                 <td>{{$topic->title}}</td>
                 <td>
-                  {{$c_que*$topic->per_q_mark}}
+                  100
                 </td>
                 <td>
-                  @php
-                    $mark = 0;
-                    $correct = collect();
-                  @endphp
-                  @foreach ($answers as $answer)
-                    @if ($answer->user_id == $student->id && $answer->answer == $answer->user_answer)
-                      @php
-                       $mark++;
-                      @endphp
-                    @endif
-                  @endforeach
-                  @php
-                    $correct = $mark*$topic->per_q_mark;
-                  @endphp
-                  {{$correct}}
+                  {{$student->score}}
                 </td>
                 
               </tr>
             @endforeach
-          @endif
+   
         </tbody>
       </table>
     </div>
