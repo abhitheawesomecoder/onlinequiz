@@ -21,7 +21,7 @@ class TopReportController extends Controller
      {
          $topics = Topic::all();
          $questions = Question::all();
-         $total_students_gave_exam = DB::select('select DISTINCT(name) from users WHERE id IN (SELECT DISTINCT(user_id) as userid FROM `answers`) ORDER BY name')->count();
+         $total_students_gave_exam = count(DB::select('select DISTINCT(name) from users WHERE id IN (SELECT DISTINCT(user_id) as userid FROM `answers`) ORDER BY name'));
          return view('admin.top_reports.index', compact('questions', 'topics','total_students_gave_exam'));
      }
 
