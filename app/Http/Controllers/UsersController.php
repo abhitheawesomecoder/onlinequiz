@@ -21,10 +21,19 @@ class UsersController extends Controller
      */
     public function index(Request $request)
     {
-       
+        
         $users = \DB::table('users')->where('role','!=' , 'A')->select('id','image','name','email','mobile','role','city','address');
 
         if($request->ajax()){
+
+          if($request->search['value'] != ''){
+            $search = $request->search['value'];
+            $users = \DB::table('users')->where(function ($query) use($search){
+                          $query->where('name', 'like', '%'.$search.'%')
+                                ->orWhere('mobile', 'like', '%'.$search.'%');
+                     })
+                     ->where('role','!=' , 'A')->select('id','image','name','email','mobile','role','city','address');
+                    }
           return DataTables::of($users)
           ->addIndexColumn()
           ->addColumn('image',function($row){
