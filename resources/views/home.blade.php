@@ -337,7 +337,7 @@
     }
 
     function hideCartSection() {
-        document.getElementById("cartSection").style.display = "none";
+        //document.getElementById("cartSection").style.display = "none";
     }
 
     // Function to check camera access and show/hide cart section accordingly
@@ -380,7 +380,7 @@
     }
 
     // Call the checkCameraAccess function when the page loads
-    document.addEventListener('DOMContentLoaded', checkCameraAccess);
+    //document.addEventListener('DOMContentLoaded', checkCameraAccess);
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
